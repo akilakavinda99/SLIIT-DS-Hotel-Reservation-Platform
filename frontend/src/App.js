@@ -16,6 +16,8 @@ import Confirm from "./components/booking/Confirm";
 import Auth from "./components/auth/Auth";
 import Existing from "./components/booking/Existing";
 import NoPage from "./components/pages/NoPage";
+import TravelerRegister from "./components/Traveler/travelerRegister";
+import LoginTraveller from "./components/Traveler/travelerLogin";
 const App = () => {
   const location = useLocation();
   /* const history = useHistory(); */
@@ -44,6 +46,8 @@ const App = () => {
         <Route path="/booking/existing" exact component={Existing} />
         <Route path="/admin" exact component={Auth} />
         <Route path="*" exact component={NoPage} />
+        <Route path ='/register'  exact component={TravelerRegister} />
+        <Route path='/login' exact component={LoginTraveller} />
       </Switch>
       <Footer />
     </>
