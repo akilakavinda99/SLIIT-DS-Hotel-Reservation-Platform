@@ -19,7 +19,7 @@ app.use("/bookings", bookingRoutes);
 app.use("/auth", authRoutes);
 app.use("/traveler", travelRoutes);
 app.get("/", (req, res) => {
-  res.send("Hello to Suay Resort API");
+  res.send("Hello Sooriya Resort API");
 });
 const PORT = process.env.PORT || 5000;
 

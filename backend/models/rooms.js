@@ -3,10 +3,7 @@ import mongoose from "mongoose";
 const roomSchema = mongoose.Schema({
   url: String,
   title: String,
-  titleHeader: String,
   description: String,
-  header: String,
-  subHeader: String,
   view: String,
   size: String,
   adults: Number,
@@ -14,8 +11,8 @@ const roomSchema = mongoose.Schema({
   bedding: String,
   amenities: [String],
   paragraph: String,
+  mainImage: String,
   subImage: String,
-  rooms: Number,
   price: Number,
 });
 

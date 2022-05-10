@@ -1,43 +1,148 @@
 .Auth {
-    .login {
-      text-align: center;
-      margin: 3rem 0;
-      h1 {
-        margin-bottom: 2rem;
-      }
-      form {
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-        width: 400px;
-        margin: auto;
-        input {
-          margin: 10px 0;
-          padding: 14px 10px;
-          &:focus {
-            border: 2px solid #dbd5cd;
-            outline: #dbd5cd;
-          }
+  .header-main {
+    height: 400px;
+  }
+
+  .login {
+    text-align: center;
+    margin: 3rem 0;
+
+    h1 {
+      margin-bottom: 2rem;
+    }
+
+    form {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      width: 400px;
+      margin: auto;
+
+      input {
+        margin: 10px 0;
+        padding: 14px 10px;
+
+        &:focus {
+          border: 2px solid #dbd5cd;
+          outline: #dbd5cd;
         }
       }
+    }
+  }
+
+  .btn-container {
+    text-align: center;
+    margin-top: 3rem;
+
+    button {
+      width: 200px;
+    }
+  }
+}
+
+.Rooms {
+  img {
+    width: 100%;
+    min-height: 250px;
+  }
+
+  .btn-alt {
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid black;
+  }
+
+  .desc {
+    p {
+      line-height: 1.5;
+    }
+  }
+
+  .flex-row-lg {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 3rem auto;
+    padding: 0 4rem;
+
+    .card2 {
+      margin: 2rem 2rem 0 2rem;
+      display: flex;
+      flex-direction: column-reverse;
+      flex: 1 0 20%;
+
+      h1 {
+        font-size: 2rem;
+        font-weight: lighter;
+      }
+
+      p {
+        margin: 1rem 0;
+        line-height: 1.5;
+      }
+
+      a {
+        width: 80px;
+      }
+
+      .img-container {
+        overflow: hidden;
+        max-height: 100%;
+        max-width: 100%;
+
+        img {
+          transform: scale(1);
+          transition: all ease-in-out 300ms;
+        }
+      }
+
+      a:hover~.img-container img {
+        transform: scale(1.1);
+      }
+    }
+  }
+}
+
+.details {
+  max-width: 1000px;
+  margin: 2rem auto;
+  h1 {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .error-msg {
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+    color: crimson;
+  }
+  form {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0 3rem;
+    .outlined-basic {
+      flex-basis: 45%;
+      margin: 1rem 0;
     }
     .btn-container {
-      text-align: center;
-      margin-top: 3rem;
-      button {
-        width: 200px;
+      margin: 2rem 0 0 0;
+      display: flex;
+      width: 100%;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .Auth {
+    .login {
+      form {
+        width: auto;
+        margin: 0 1rem;
       }
     }
   }
-  
-  @media only screen and (max-width: 480px) {
-    .Auth {
-      .login {
-        form {
-          width: auto;
-          margin: 0 1rem;
-        }
-      }
-    }
-  }
-  
+}
