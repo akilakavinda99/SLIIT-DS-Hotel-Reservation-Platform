@@ -14,7 +14,7 @@ const Room = (props) => {
   useEffect(() => {
     dispatch(getRoom(currId));
   }, [location, currId, dispatch]);
-  // for some reason this is rendering twice....
+  
   const room = useSelector((state) => state.rooms.room);
   const handleClick = () => {
     show === 4 ? setShow(room.amenities.length) : setShow(4);
@@ -29,15 +29,10 @@ const Room = (props) => {
       >
         <div className="header-content">
           <h2 className="alt-font">{room.title}</h2>
-          <p>{room.titleHeader}</p>
         </div>
 
         <BookWidget />
       </header>
-      <section className="desc">
-        <h1 className="alt-font">{room.header}</h1>
-        <p>{room.subHeader}</p>
-      </section>
       <section className="roomInfo">
         <div className="infoLeft">
           <div className="info">

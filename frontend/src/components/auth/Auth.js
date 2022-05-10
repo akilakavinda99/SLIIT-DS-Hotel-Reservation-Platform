@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import * as api from "../../api/index";
 import Bookings from "./bookings/Bookings";
+import Rooms from "./Rooms"
 
 import "./Auth.scss";
 
@@ -16,7 +17,8 @@ const Auth = () => {
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
-  const handleSubmit = async (e) => { 
+
+  const handleSubmit = async (e) => {
     try {
       e.preventDefault();
       if (error.length > 0) {
@@ -42,6 +44,16 @@ const Auth = () => {
       }
     }
   };
+
+  function changetab(tabname) {
+    var i;
+    var x = document.getElementsByClassName("tab");
+    for (i = 0; i < x.length; i++) {
+      x[i].style.display = "none";
+    }
+    document.getElementById(tabname).style.display = "block";
+  }
+
   const logout = () => {
     localStorage.clear();
     setUser(null);
@@ -85,11 +97,20 @@ const Auth = () => {
         </div>
       ) : (
         <>
-          <Bookings />
           <div className="btn-container">
+            <button className="btn" onClick={() => changetab('rooms')}>Rooms</button>
+            <button className="btn" onClick={() => changetab('bookings')}>Bookings</button>
             <button className="btn" onClick={logout}>
               Log Out
             </button>
+          </div>
+
+          <div className="tab" id="rooms">
+            <Rooms />
+          </div>
+
+          <div className="tab" id="bookings" style={{ display: "none" }}>
+            <Bookings />
           </div>
         </>
       )}

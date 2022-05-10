@@ -13,9 +13,13 @@ import Booking from "./components/booking/Booking";
 import Available from "./components/booking/Available";
 import Checkout from "./components/booking/Checkout";
 import Confirm from "./components/booking/Confirm";
+
 import Auth from "./components/auth/Auth";
+import AddRoom from "./components/auth/AddRoom";
+
 import Existing from "./components/booking/Existing";
 import NoPage from "./components/pages/NoPage";
+
 const App = () => {
   const location = useLocation();
   /* const history = useHistory(); */
@@ -42,7 +46,10 @@ const App = () => {
         <Route path="/booking/checkout" exact component={Checkout} />
         <Route path="/booking/confirm" exact component={Confirm} />
         <Route path="/booking/existing" exact component={Existing} />
+
         <Route path="/admin" exact component={Auth} />
+        <Route path="/admin/rooms/add" exact component={AddRoom}/>
+
         <Route path="*" exact component={NoPage} />
       </Switch>
       <Footer />

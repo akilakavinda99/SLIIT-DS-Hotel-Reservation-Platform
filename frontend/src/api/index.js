@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "https://suay-resort-api.herokuapp.com/",
+  baseURL: "http://localhost:5000/",
 }); // can set a base url here
 
 export const fetchRooms = () => API.get("/rooms");
@@ -13,3 +13,4 @@ export const fetchExistingBooking = (data) => API.post("/bookings", data);
 export const createBooking = (data) => API.post("/bookings/create", data);
 export const deleteBooking = (data) => API.post("/bookings/delete", data);
 export const signin = (data) => API.post("/auth", data);
+export const addNewRoom = (data) => API.post("/rooms/create", data);
