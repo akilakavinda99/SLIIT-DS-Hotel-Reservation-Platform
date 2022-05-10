@@ -1,14 +1,18 @@
 import React, { useEffect } from "react";
 import "./styles/App.scss";
 import { Route, Switch, useLocation } from "react-router-dom";
+
 import Navbar from "./components/navbar/Navbar";
 import NavMobile from "./components/navbar/NavMobile";
+
 import Home from "./components/pages/Home";
-import Rooms from "./components/pages/rooms/Rooms";
-import Room from "./components/pages/rooms/Room";
 import Footer from "./components/pages/Footer";
 import About from "./components/pages/About";
 import Tour from "./components/pages/Tour";
+
+import Rooms from "./components/pages/rooms/Rooms";
+import Room from "./components/pages/rooms/Room";
+
 import Booking from "./components/booking/Booking";
 import Available from "./components/booking/Available";
 import Checkout from "./components/booking/Checkout";
@@ -16,6 +20,9 @@ import Confirm from "./components/booking/Confirm";
 
 import Auth from "./components/auth/Auth";
 import AddRoom from "./components/auth/AddRoom";
+
+import TravelerRegister from "./components/Traveler/travelerRegister";
+import LoginTraveller from "./components/Traveler/travelerLogin";
 
 import Existing from "./components/booking/Existing";
 import NoPage from "./components/pages/NoPage";
@@ -51,6 +58,8 @@ const App = () => {
         <Route path="/admin/rooms/add" exact component={AddRoom}/>
 
         <Route path="*" exact component={NoPage} />
+        <Route path ='/register'  exact component={TravelerRegister} />
+        <Route path='/login' exact component={LoginTraveller} />
       </Switch>
       <Footer />
     </>
