@@ -1,6 +1,16 @@
 import Bookings from "../models/bookings.js";
 import Rooms from "../models/rooms.js";
 import { generateID, deleteExpiredBookings } from "./helper.js";
+import nodemailer from "nodemailer";
+
+var transporter = nodemailer.createTransport({
+  service: 'gmail',
+  auth: {
+    user: 'kakila492@gmail.com',
+    pass: 'zfxvgifygymtztyp'
+  }
+});
+
 
 export const getAllBookings = async (req, res) => {
   try {
@@ -38,6 +48,7 @@ export const getBooking = async (req, res) => {
 };
 
 export const postBooking = async (req, res) => {
+  
   try {
     const data = req.body; // we now have the data to create a new booking
 
@@ -63,6 +74,7 @@ export const postBooking = async (req, res) => {
     const allUsers = await Bookings.find();
     allUsers.forEach((info) => {
       idArr.push(info.comfirmation);
+
     });
     // then use a while loop, as long as the new ID matches an item in the array, create a new one
     while (idArr.includes(newId)) {
@@ -85,7 +97,23 @@ export const postBooking = async (req, res) => {
       cardNum,
       confirmation: newId,
     });
+   
+        var mailOptions = {
+  from: 'kakila492@gmail.com',
+  to: email,
+  subject: 'Sooriya Resort, Koggala',
+  text: `Your booking from ${title}is confirmed, the confirmation id is ${newId}`
+};
+    transporter.sendMail(mailOptions, function(error, info){
+  if (error) {
+    console.log(error);
+  } else {
+    console.log('Email sent: ' + info.response);
+  }
+});
     res.status(200).json(result);
+    
+    
   } catch (error) {
     res.status(404).json({ message: error.message });
   }

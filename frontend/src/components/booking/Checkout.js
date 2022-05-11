@@ -8,6 +8,7 @@ import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 import MenuItem from "@material-ui/core/MenuItem";
 import "../../styles/Checkout.scss";
+import axios from 'axios';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -23,18 +24,7 @@ const card = [
     value: "VISA",
     label: "VISA",
   },
-  {
-    value: "MASTERCARD",
-    label: "MASTERCARD",
-  },
-  {
-    value: "DISCOVER",
-    label: "DISCOVER",
-  },
-  {
-    value: "OTHER",
-    label: "OTHER",
-  },
+ 
 ];
 
 const Checkout = () => {
@@ -50,7 +40,7 @@ const Checkout = () => {
     confirmEmail: "",
     phone: "",
     paymentType: "VISA",
-    cardNum: "0112358132134558",
+    cardNum: "",
   });
   const { room } = useSelector((state) => state.details);
   const guestDetails = useSelector((state) => state.details);
@@ -80,10 +70,20 @@ const Checkout = () => {
       setMsg("Must be a valid email");
       return setError(true);
     }
-
+    var cardno = /^(?:4[0-9]{12}(?:[0-9]{3})?)$/;
+    console.log(formData.cardNum.match(cardno));
+    console.log(formData.cardNum);
+    if(formData.cardNum.match(cardno)===null){
+      setMsg("Must be a valid visa card number");
+         return setError(true);
+    }
+      var mobile = formData.phone;
+      var mobileNumber = mobile.replace(/^.{1}/g, '94');
     dispatch(postBooking({ formData, guestDetails }));
     // create a booking for the guest
     history.push("/booking/confirm");
+    axios.post(`https://app.notify.lk/api/v1/send?user_id=19009&api_key=rOYaX8ies9aoooGtVX4g&sender_id=NotifyDEMO&to=${mobileNumber}&message=Your Booking is COnfirmed`)
+
   };
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -201,6 +201,9 @@ const Checkout = () => {
             /*       onChange={handleChange} */
             helperText="Card Type"
             variant="outlined"
+             inputProps={{
+              readonly:true
+            }}
           >
             {card.map((option) => (
               <MenuItem key={option.value} value={option.value}>
@@ -209,17 +212,27 @@ const Checkout = () => {
             ))}
           </TextField>
           <TextField
+          onChange={handleChange}
             required
             className="outlined-basic"
             name="cardNum"
             label="Card Number"
-            value={formData.cardNum}
-            InputProps={{
-              readOnly: true,
-            }}
+            
+            
+            variant="outlined"
+            
+          />
+    
+          {/* <TextField
+            required
+            className="outlined-basic"
+            name="cvv"
+            label="CVV"
+            
+            
             variant="outlined"
             helperText="This value cannot be changed"
-          />
+          /> */}
           <div className="btn-container">
             <Button onClick={handleSubmit} variant="outlined">
               Submit
