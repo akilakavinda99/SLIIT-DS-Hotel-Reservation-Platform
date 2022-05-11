@@ -24,7 +24,6 @@ export const getRoom = async (req, res) => {
 
 export const postRoom = async (req, res) => {
   try {
-    console.log("Room backend api")
     const formData = req.body.formdata; // get data from the body 
     const selectedAmenities = req.body.selectedAmenities; // get data from the body 
 
