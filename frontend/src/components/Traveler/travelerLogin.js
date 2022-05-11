@@ -19,7 +19,7 @@ const TravellerLogin = () => {
 
         const login = travelerData => {
             return (
-                axios.post('http://localhost:8070/traveler/login', travelerData)
+                axios.post('http://localhost:5000/traveler/login', travelerData)
                     .then(res => {
 
                         const utoken = {
