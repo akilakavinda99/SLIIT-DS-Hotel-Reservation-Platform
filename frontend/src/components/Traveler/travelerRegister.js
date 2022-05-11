@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import axios from "axios";
 
+import "./TravelerReg.scss";
+
 export default function RegisterTraveler() {
 
     const [firstName, setFirstName] = useState("");
@@ -26,32 +28,70 @@ export default function RegisterTraveler() {
     }
 
     return (
-        <div>
+        <div className="TravelerReg">
+            <header
+                className="header-main"
+                style={{
+                background:
+                    ' no-repeat center/cover url("/img/admin/admin_main.jpg")',
+                }}
+            >
+                <div className="header-content">
+                    <h2 className="alt-font">Sign Up Here</h2>
+                </div>
+            </header>
 
-            <form onSubmit={sendData}>
-                <label for="first name">First Name:</label>
-                <input type="text" onChange={(e) => {
-                    setFirstName(e.target.value)
-                }} />
+            <div className="register">
+                <h1 className="alt-font">Sign up</h1>
+          
+                    <form onSubmit={sendData}>
+                        <input
+                        type="text"
+                        placeholder="First Name"
+                        name="firstname"
+                        onChange={(e) => {
+                            setFirstName(e.target.value)
+                        }} />
 
-                <label for="last name">last Name:</label>
-                <input type="text" onChange={(e) => {
-                    setLastName(e.target.value)
-                }} />
+                        <input
+                        type="text"
+                        placeholder="Last Name"
+                        name="lastname"
+                        onChange={(e) => {
+                            setLastName(e.target.value)
+                            }} />
+                        
+                        <input
+                        type="email"
+                        placeholder="Email"
+                        name="email"
+                        onChange={(e) => {
+                            setEmail(e.target.value)
+                        }} />
 
-                <label for="price">email:</label>
-                <input type="email" onChange={(e) => {
-                    setEmail(e.target.value)
-                }} />
-
-                <label for="password">password:</label>
-                <input type="password" onChange={(e) => {
-                    setPassword(e.target.value)
-                }} />
-
-                <input type="submit" value="sign up" />
-                <input type="submit" value="sign in" />
-            </form>
+                        <input
+                        type="password"
+                        placeholder="Password"
+                        onChange={(e) => {
+                            setPassword(e.target.value)
+                        }} />
+                    <button className="btn">Register</button>
+                </form>
+        </div>
         </div>
     )
 }
+
+        
+
+<header
+        className="header-main"
+        style={{
+          background:
+            ' no-repeat center/cover url("/img/admin/admin_main.jpg")',
+        }}
+      >
+        <div className="header-content">
+          <h2 className="alt-font">Admin Page</h2>
+        </div>
+      </header>
