@@ -1,7 +1,8 @@
-const router = require("express").Router()
-const bcrypt = require("bcrypt")
-const e = require("express")
-let Traveler = require("../models/traveler.js")
+import bcrypt from "bcrypt";
+import express from "express";
+import Traveler from "../models/traveler.js";
+
+const router = express.Router();
 
 //Login
 router.route("/login").post((req,res)=>{
@@ -65,4 +66,4 @@ router.route("/get/:id").get(async(req, res) =>{
 
 })
 
-module.exports = router
+export default router;

@@ -57,9 +57,10 @@ const App = () => {
         <Route path="/admin" exact component={Auth} />
         <Route path="/admin/rooms/add" exact component={AddRoom}/>
 
-        <Route path="*" exact component={NoPage} />
         <Route path ='/register'  exact component={TravelerRegister} />
         <Route path='/login' exact component={LoginTraveller} />
+        
+        <Route path="*" exact component={NoPage} />
       </Switch>
       <Footer />
     </>

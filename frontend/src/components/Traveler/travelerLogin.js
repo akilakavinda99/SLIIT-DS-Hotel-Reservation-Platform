@@ -1,8 +1,10 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
 import axios from "axios";
 
-export default function travellerLogin(){
+const TravellerLogin = () => {
 
+    const history = useHistory();
     const [Traveler, setLoginData] = useState({
         email: "",
         password: ""
@@ -19,30 +21,27 @@ export default function travellerLogin(){
             return (
                 axios.post('http://localhost:8070/traveler/login', travelerData)
                     .then(res => {
-        
+
                         const utoken = {
                             email: travelerData.email,
                             role: "traveler"
                         }
-        
+
                         localStorage.setItem('usertoken', JSON.stringify(utoken))
                         console.log(JSON.parse(localStorage.getItem('usertoken')))
                         return res.data
-        
+
                     })
                     .catch(err => {
                         console.log(err.message)
                     })
             )
         }
-        
-
 
         login(Traveler)
             .then(res => {
                 if (!res.error) {
-                    navigate("/")
-                    window.location.reload()
+                    history.push("/");
                 } else {
                     window.alert(res.error)
                 }
@@ -81,3 +80,5 @@ export default function travellerLogin(){
     )
 
 }
+
+export default TravellerLogin;

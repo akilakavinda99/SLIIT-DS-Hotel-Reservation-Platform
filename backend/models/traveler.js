@@ -1,4 +1,4 @@
-const mongoose =  require("mongoose");
+import mongoose from "mongoose";
 const Schema = mongoose.Schema;
 
 const travelerSchema = new Schema({
@@ -22,4 +22,5 @@ const travelerSchema = new Schema({
 })
 
 const Traveler = mongoose.model("Traveler", travelerSchema);
-module.exports = Traveler;
+
+export default Traveler;
