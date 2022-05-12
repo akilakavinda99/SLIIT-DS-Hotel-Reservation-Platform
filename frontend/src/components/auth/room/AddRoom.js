@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { postRoom } from "../../actions/rooms";
+import { postRoom } from "../../../actions/rooms";
 import { makeStyles } from "@material-ui/styles";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
@@ -14,7 +14,7 @@ import Select from '@mui/material/Select';
 import Checkbox from '@mui/material/Checkbox';
 // import * as api from "../../api/index";
 
-import "./Auth.scss";
+import "../Auth.scss";
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -65,60 +65,60 @@ const MenuProps = {
 
 const amenitiesList = [
     {
-        value: 'Breakfast',
-        key: 'breakfast'
+        label: 'Breakfast',
+        value: 'breakfast'
     },
     {
-        value: 'King Bed',
-        key: 'king bed'
+        label: 'King Bed',
+        value: 'king bed'
     },
     {
-        value: 'Mini Bar',
-        key: 'mini bar'
+        label: 'Mini Bar',
+        value: 'mini bar'
     },
     {
-        value: '24 Hour Room Service',
-        key: '24 hour room service'
+        label: '24 Hour Room Service',
+        value: '24 hour room service'
     },
     {
-        value: 'Bath',
-        key: 'bath'
+        label: 'Bath',
+        value: 'bath'
     },
     {
-        value: 'Shower',
-        key: 'shower'
+        label: 'Shower',
+        value: 'shower'
     },
     {
-        value: 'Sitting Area',
-        key: 'sitting area'
+        label: 'Sitting Area',
+        value: 'sitting area'
     },
     {
-        value: 'Coffee/Tea',
-        key: 'cofee/tea'
+        label: 'Coffee/Tea',
+        value: 'cofee/tea'
     },
     {
-        value: 'TV',
-        key: 'tv'
+        label: 'TV',
+        value: 'tv'
     },
     {
-        value: 'WiFi',
-        key: 'wifi'
+        label: 'WiFi',
+        value: 'wifi'
     },
     {
-        value: 'Shuttle',
-        key: 'shuttle'
+        label: 'Shuttle',
+        value: 'shuttle'
     },
     {
-        value: 'Beach',
-        key: 'beach'
+        label: 'Beach',
+        value: 'beach'
     },
     {
-        value: 'Spa',
-        key: 'spa'
+        label: 'Spa',
+        value: 'spa'
     },
     {
-        value: 'Hot Tub',
-        key: 'hot tub'
+        label: 'Hot Tub',
+        value: 'hot tub'
     }
 ];
 
@@ -256,9 +256,9 @@ const AddRoom = () => {
                             MenuProps={MenuProps}
                         >
                             {amenitiesList.map((amenity) => (
-                                <MenuItem key={amenity.key} value={amenity.value}>
+                                <MenuItem key={amenity.value} value={amenity.value}>
                                     <Checkbox checked={selectedAmenities.indexOf(amenity.value) > -1} />
-                                    <ListItemText primary={amenity.value} />
+                                    <ListItemText primary={amenity.label} />
                                 </MenuItem>
                             ))}
                         </Select>

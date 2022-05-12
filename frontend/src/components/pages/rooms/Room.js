@@ -14,8 +14,9 @@ const Room = (props) => {
   useEffect(() => {
     dispatch(getRoom(currId));
   }, [location, currId, dispatch]);
-  
+
   const room = useSelector((state) => state.rooms.room);
+
   const handleClick = () => {
     show === 4 ? setShow(room.amenities.length) : setShow(4);
   };
@@ -69,9 +70,8 @@ const Room = (props) => {
                   ))}
                 <li onClick={handleClick}>
                   <i
-                    className={`${
-                      show <= 4 ? "fas fa-plus" : "fas fa-minus"
-                    } itemIcon itemShow`}
+                    className={`${show <= 4 ? "fas fa-plus" : "fas fa-minus"
+                      } itemIcon itemShow`}
                   >
                     {show <= 4 && <span>{room.amenities.length - 4}</span>}
                   </i>
@@ -92,8 +92,8 @@ const Room = (props) => {
           <h1 className="alt-font">Welcome to Koggala</h1>
           <p>
             Welcome back to our oceanfront resort in Koggala lively, magnificent city. You'll spend warm days with many exciting activities.
-days spent relaxing beside gleaming pools or basking in relaxation at our
-pleasant nights tasting local flavors at our magnificent spa
+            days spent relaxing beside gleaming pools or basking in relaxation at our
+            pleasant nights tasting local flavors at our magnificent spa
           </p>
         </article>
         <div className="descRight">
