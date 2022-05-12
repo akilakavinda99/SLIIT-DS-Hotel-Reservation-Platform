@@ -20,7 +20,7 @@ export default function RegisterTraveler() {
             password
         }
 
-        axios.post("http://localhost:/3000/traveler/register", newTraveler).then(() => {
+        axios.post("http://localhost:5000/traveler/register", newTraveler).then(() => {
             alert("successful")
         }).catch((e) => {
             alert(e)
@@ -76,22 +76,9 @@ export default function RegisterTraveler() {
                             setPassword(e.target.value)
                         }} />
                     <button className="btn">Register</button>
+                    <h4>Already a member? Sign in</h4>
                 </form>
         </div>
         </div>
     )
 }
-
-        
-
-<header
-        className="header-main"
-        style={{
-          background:
-            ' no-repeat center/cover url("/img/admin/admin_main.jpg")',
-        }}
-      >
-        <div className="header-content">
-          <h2 className="alt-font">Admin Page</h2>
-        </div>
-      </header>
