@@ -15,7 +15,7 @@ export const getRoom = async (req, res) => {
   const { id } = req.params;
   const url = id;
   try {
-    const room = await Rooms.findOne({ url });
+    const room = await Rooms.findById(url);
     res.status(200).json(room);
   } catch (error) {
     res.status(404).json({ message: error.message });
@@ -44,8 +44,16 @@ export const postRoom = async (req, res) => {
 
     };
 
-    // create a new room in MongoDB
-    const result = await Rooms.create(room)
+    // If id exist, update the room details. Otherwise create new room
+    if (formData.id) {
+      // console.log("Room Updated")
+      const result = await Rooms.findByIdAndUpdate(formData.id, room)
+    } else {
+      // console.log("No ID")
+      // console.log(formData)
+      // create a new room in MongoDB
+      const result = await Rooms.create(room)
+    }
 
     res.status(200).json(result)
 
