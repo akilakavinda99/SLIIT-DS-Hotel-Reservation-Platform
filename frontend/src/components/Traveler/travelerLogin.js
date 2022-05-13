@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import axios from "axios";
 
+import "./TravelerReg.scss";
+
 const TravellerLogin = () => {
 
     const history = useHistory();
@@ -54,31 +56,44 @@ const TravellerLogin = () => {
 
     return (
         <div>
-            <h3>Customer Login Form</h3>
-            <form onSubmit={onSubmit}>
+            <div className="TravelerReg">
+            <header
+                className="header-main"
+                style={{
+                background:
+                    ' no-repeat center/cover url("/img/admin/admin_main.jpg")',
+                }}
+            >
+                <div className="header-content">
+                    <h2 className="alt-font">Sign In Here</h2>
+                </div>
+            </header>
 
-                <label htmlFor="Username">email</label>
-                <input type="text"
-                    name="email"
-                    placeholder="Enter your email"
-                    required
-                    onChange={onChange} />
+            <div className="register">
+                <h1 className="alt-font">Sign In</h1>
 
-                <br />
-                <label htmlFor="Password">Password</label>
-                <input type="password"
-                    name="password"
-                    placeholder="Enter your password"
-                    required
-                    onChange={onChange} />
-                <br />
-                <input type="submit" />
-
-
-            </form>
+                    <form onSubmit={onSubmit}> 
+                        <input type="text"
+                            name="email"
+                            placeholder="Enter your email"
+                            required
+                            onChange={onChange} />
+                    
+                        <input type="password"
+                            name="password"
+                            placeholder="Enter your password"
+                            required
+                            onChange={onChange} />
+                    
+                        <button className="btn">Log in</button>
+                    </form>
+            </div>
+            </div>
         </div>
     )
 
 }
 
 export default TravellerLogin;
+
+
