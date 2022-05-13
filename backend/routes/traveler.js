@@ -60,8 +60,10 @@ router.route("/get/:id").get(async (req, res) => {
     const travelerId = req.params.id;
 
     await Traveler.findById(travelerId).then((traveler) => {
-        req.status(200).send({ status: "Traveler details fetched", traveler });
-    }).catch((er) => {
+
+        res.status(200).send({status: "Traveler details fetched", traveler});
+    }).catch((er) =>{
+
         console.log(er.message)
         res.status(500).send({ status: "Error with fetching data" });
     })
