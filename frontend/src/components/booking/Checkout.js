@@ -24,7 +24,7 @@ const card = [
     value: "VISA",
     label: "VISA",
   },
- 
+
 ];
 
 const Checkout = () => {
@@ -73,16 +73,16 @@ const Checkout = () => {
     var cardno = /^(?:4[0-9]{12}(?:[0-9]{3})?)$/;
     console.log(formData.cardNum.match(cardno));
     console.log(formData.cardNum);
-    if(formData.cardNum.match(cardno)===null){
+    if (formData.cardNum.match(cardno) === null) {
       setMsg("Must be a valid visa card number");
-         return setError(true);
+      return setError(true);
     }
-      var mobile = formData.phone;
-      var mobileNumber = mobile.replace(/^.{1}/g, '94');
+    var mobile = formData.phone;
+    var mobileNumber = mobile.replace(/^.{1}/g, '94');
     dispatch(postBooking({ formData, guestDetails }));
     // create a booking for the guest
     history.push("/booking/confirm");
-    axios.post(`https://app.notify.lk/api/v1/send?user_id=19009&api_key=rOYaX8ies9aoooGtVX4g&sender_id=NotifyDEMO&to=${mobileNumber}&message=Your Booking is COnfirmed`)
+    axios.post(`https://app.notify.lk/api/v1/send?user_id=19009&api_key=rOYaX8ies9aoooGtVX4g&sender_id=NotifyDEMO&to=${mobileNumber}&message=Your Booking is Confirmed`)
 
   };
   const handleChange = (e) => {
@@ -201,9 +201,6 @@ const Checkout = () => {
             /*       onChange={handleChange} */
             helperText="Card Type"
             variant="outlined"
-             inputProps={{
-              readonly:true
-            }}
           >
             {card.map((option) => (
               <MenuItem key={option.value} value={option.value}>
@@ -212,27 +209,17 @@ const Checkout = () => {
             ))}
           </TextField>
           <TextField
-          onChange={handleChange}
+            onChange={handleChange}
             required
             className="outlined-basic"
             name="cardNum"
             label="Card Number"
-            
-            
+
+
             variant="outlined"
-            
+
           />
-    
-          {/* <TextField
-            required
-            className="outlined-basic"
-            name="cvv"
-            label="CVV"
-            
-            
-            variant="outlined"
-            helperText="This value cannot be changed"
-          /> */}
+
           <div className="btn-container">
             <Button onClick={handleSubmit} variant="outlined">
               Submit

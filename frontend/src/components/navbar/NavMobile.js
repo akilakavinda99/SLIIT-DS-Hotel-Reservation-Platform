@@ -28,7 +28,7 @@ const NavMobile = () => {
         </div>
         <div className="brand">
           <Link to="/" onClick={() => setShowMenu(false)}>
-            <h1 className="alt-font">SUAY RESORTS</h1>
+            <h1 className="alt-font">SOORIYA RESORT</h1>
           </Link>
         </div>
         <Link to="/booking">
@@ -48,12 +48,6 @@ const NavMobile = () => {
           <li>
             <Link onClick={() => setShowMenu(false)} to="/rooms">
               Rooms
-            </Link>
-            <i className="fas fa-chevron-right"></i>
-          </li>
-          <li>
-            <Link onClick={() => setShowMenu(false)} to="/dining">
-              Dining{" "}
             </Link>
             <i className="fas fa-chevron-right"></i>
           </li>

@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 // import "../../styles/Rooms.scss";
-import { getAllRooms } from "../../actions/rooms";
+import { getAllRooms } from "../../../actions/rooms";
 import { Link, useLocation } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
@@ -36,8 +36,8 @@ const Rooms = () => {
                     </div>
                 ) : (
                     rooms.map((room) => (
-                        <article className="card2" key={room.title}>
-                            <Link to={`rooms/${room.url}`}>
+                        <article className="card2" key={room._id}>
+                            <Link to={`admin/rooms/update/${room._id}`}>
                                 <button className="btn-alt">EDIT</button>
                             </Link>
                             <div>
@@ -45,7 +45,7 @@ const Rooms = () => {
                                 <p>{room.description}</p>
                             </div>
                             <div className="img-container">
-                                <img src={`img/rooms/${room.mainImage}`} alt={room.mainImage} />
+                                <img src={`/img/rooms/${room.mainImage}`} alt={room.mainImage} />
                             </div>
                         </article>
                     ))

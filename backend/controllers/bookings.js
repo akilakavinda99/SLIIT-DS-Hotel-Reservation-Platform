@@ -48,7 +48,7 @@ export const getBooking = async (req, res) => {
 };
 
 export const postBooking = async (req, res) => {
-  
+
   try {
     const data = req.body; // we now have the data to create a new booking
 
@@ -97,23 +97,23 @@ export const postBooking = async (req, res) => {
       cardNum,
       confirmation: newId,
     });
-   
-        var mailOptions = {
-  from: 'kakila492@gmail.com',
-  to: email,
-  subject: 'Sooriya Resort, Koggala',
-  text: `Your booking from ${title}is confirmed, the confirmation id is ${newId}`
-};
-    transporter.sendMail(mailOptions, function(error, info){
-  if (error) {
-    console.log(error);
-  } else {
-    console.log('Email sent: ' + info.response);
-  }
-});
+
+    var mailOptions = {
+      from: 'kakila492@gmail.com',
+      to: email,
+      subject: 'Sooriya Resort, Koggala',
+      text: `Your booking from ${title}is confirmed, the confirmation id is ${newId}`
+    };
+    transporter.sendMail(mailOptions, function (error, info) {
+      if (error) {
+        console.log(error);
+      } else {
+        console.log('Email sent: ' + info.response);
+      }
+    });
     res.status(200).json(result);
-    
-    
+
+
   } catch (error) {
     res.status(404).json({ message: error.message });
   }

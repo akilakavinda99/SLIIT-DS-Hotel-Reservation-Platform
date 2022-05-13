@@ -1,5 +1,6 @@
 // Database Actions
 export const CREATE = "CREATE"; // create a booking
+export const UPDATE = "UPDATE"; // create a booking
 export const FETCH = "FETCH"; // get a single booking
 export const DELETE = "DELETE"; // deletes a single booking 
 export const FETCH_ALL = "FETCH_ALL"; // get all bookings, admin only

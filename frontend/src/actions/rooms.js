@@ -15,14 +15,14 @@ export const getAllRooms = () => async (dispatch) => {
 export const getRoom = (url) => async (dispatch) => {
   try {
     const { data } = await api.fetchRoom(url);
-    console.log(data);
+    // console.log(data);
     dispatch({ type: ROOM, payload: data });
   } catch (error) {
     console.log(error);
   }
 };
 
-/* This is to add a new room to the db */
+/* This is to add a new room to the db or update */
 export const postRoom = (details) => async (dispatch) => {
   try {
     const newRoom = {
@@ -30,13 +30,38 @@ export const postRoom = (details) => async (dispatch) => {
       selectedAmenities: details.selectedAmenities
     };
 
-    console.log("Frontend actions")
-    console.log(newRoom)
+    // console.log(newRoom)
 
     const { data } = await api.addNewRoom(newRoom);
     dispatch({ type: CREATE, payload: data })
 
   } catch (error) {
-    console.log(error)
+    // console.log(error)
   }
 };
+
+export const getSelectedRoom = async (id) => {
+  try {
+    const { data } = await api.fetchRoom(id);
+    // console.log(data);
+
+    return (data)
+
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export const deleteRoom = async (id) => {
+  try {
+    // console.log(id)
+    const sendId = { id }
+    // console.log(sendId)
+    const result = await api.deleteRoom(sendId);
+    // console.log(result)
+
+    // return result
+  } catch (error) {
+    console.log(error)
+  }
+}
