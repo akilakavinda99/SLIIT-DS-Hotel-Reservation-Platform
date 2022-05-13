@@ -25,7 +25,7 @@ export const signin = async (req, res) => {
       return res.status(400).json({ message: "Invalid credentials." });
     // if user does exist by passing the above checks, then the user can proceed to logging in
     // send a json web token to the frontend
-    // the 'test' string here is the secret key for the token
+    // 'test' is the secret key for the token
     const token = jwt.sign(
       { username: existingUser.username, id: existingUser._id },
       "test",

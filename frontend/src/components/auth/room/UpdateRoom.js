@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useHistory, useLocation } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { postRoom, getSelectedRoom } from "../../../actions/rooms";
+import { postRoom, getSelectedRoom, deleteRoom } from "../../../actions/rooms";
 
 import { makeStyles } from "@material-ui/styles";
 import TextField from "@material-ui/core/TextField";
@@ -185,6 +185,15 @@ const AddRoom = (props) => {
             // On autofill we get a stringified value.
             typeof value === 'string' ? value.split(',') : value,
         );
+    };
+
+    const handleDelete = (e) => {
+        e.preventDefault()
+        // console.log("Delete id: " + currId)
+        deleteRoom(currId)
+            .then(
+                history.push("/admin")
+            )
     };
 
     const handleSubmit = (e) => {
@@ -371,14 +380,18 @@ const AddRoom = (props) => {
                         <Button onClick={handleSubmit} variant="outlined">
                             Submit
                         </Button>
+                        <div className="actions">
+                            <Button
+                                className="delete-btn"
+                                onClick={handleDelete}
+                            >
+                                DELETE
+                            </Button>
+                        </div>
                     </div>
+
                 </form>
             </section>
-
-
-
-
-
         </div >
     );
 };

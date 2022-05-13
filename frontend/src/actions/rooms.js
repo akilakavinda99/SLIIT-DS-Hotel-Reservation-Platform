@@ -36,7 +36,7 @@ export const postRoom = (details) => async (dispatch) => {
     dispatch({ type: CREATE, payload: data })
 
   } catch (error) {
-    console.log(error)
+    // console.log(error)
   }
 };
 
@@ -52,20 +52,16 @@ export const getSelectedRoom = async (id) => {
   }
 };
 
-/* This is to update room in database */
-// export const updateRoom = (details) => async (dispatch) => {
-//   try {
-//     const newRoom = {
-//       formdata: details.formData,
-//       selectedAmenities: details.selectedAmenities
-//     };
+export const deleteRoom = async (id) => {
+  try {
+    // console.log(id)
+    const sendId = { id }
+    // console.log(sendId)
+    const result = await api.deleteRoom(sendId);
+    // console.log(result)
 
-//     console.log(newRoom)
-
-//     const { data } = await api.addNewRoom(newRoom);
-//     dispatch({ type: UPDATE, payload: data })
-
-//   } catch (error) {
-//     console.log(error)
-//   }
-// };
+    // return result
+  } catch (error) {
+    console.log(error)
+  }
+}

@@ -29,7 +29,7 @@ const Available = () => {
   return (
     <div className="Available">
       {availableBookings.map((room) => (
-        <React.Fragment key={room.url}>
+        <React.Fragment key={room._id}>
           <div className="room-card">
             <div className="card-img">
               <img src={`img/rooms/${room.mainImage}`} alt={room.mainImage} />

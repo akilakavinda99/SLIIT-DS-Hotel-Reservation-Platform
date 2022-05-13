@@ -22,7 +22,7 @@ const Tour = () => {
         <h1 className="alt-font">View all of our tours</h1>
         <p>
           While staying at our resort, you may explore everything Koggala has to offer.
-Koggala has something for everyone, with its pure white sand beaches, magnificent landscape, unique food, and friendly residents.
+          Koggala has something for everyone, with its pure white sand beaches, magnificent landscape, unique food, and friendly residents.
         </p>
       </section>
       <section className="desc_main">
@@ -47,13 +47,13 @@ Koggala has something for everyone, with its pure white sand beaches, magnificen
           <div>
             <h1 className="alt-font">Koggala Airport</h1>
             <p>
-             Koggala Airport in Sri Lanka was originally a Royal Air Force Station RAF Koggala. It is now the SLAF Koggala, used for domestic flights and for military purposes
+              Koggala Airport in Sri Lanka was originally a Royal Air Force Station RAF Koggala. It is now the SLAF Koggala, used for domestic flights and for military purposes
             </p>
           </div>
           <span></span>
         </article>
       </section>
-     
+
     </div>
   );
 };

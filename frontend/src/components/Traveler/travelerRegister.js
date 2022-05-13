@@ -32,8 +32,8 @@ export default function RegisterTraveler() {
             <header
                 className="header-main"
                 style={{
-                background:
-                    ' no-repeat center/cover url("/img/admin/admin_main.jpg")',
+                    background:
+                        ' no-repeat center/cover url("/img/admin/admin_main.jpg")',
                 }}
             >
                 <div className="header-content">
@@ -43,9 +43,9 @@ export default function RegisterTraveler() {
 
             <div className="register">
                 <h1 className="alt-font">Sign up</h1>
-          
-                    <form onSubmit={sendData}>
-                        <input
+
+                <form onSubmit={sendData}>
+                    <input
                         type="text"
                         placeholder="First Name"
                         name="firstname"
@@ -53,15 +53,15 @@ export default function RegisterTraveler() {
                             setFirstName(e.target.value)
                         }} />
 
-                        <input
+                    <input
                         type="text"
                         placeholder="Last Name"
                         name="lastname"
                         onChange={(e) => {
                             setLastName(e.target.value)
-                            }} />
-                        
-                        <input
+                        }} />
+
+                    <input
                         type="email"
                         placeholder="Email"
                         name="email"
@@ -69,7 +69,7 @@ export default function RegisterTraveler() {
                             setEmail(e.target.value)
                         }} />
 
-                        <input
+                    <input
                         type="password"
                         placeholder="Password"
                         onChange={(e) => {
@@ -77,21 +77,21 @@ export default function RegisterTraveler() {
                         }} />
                     <button className="btn">Register</button>
                 </form>
-        </div>
+            </div>
         </div>
     )
 }
 
-        
+
 
 <header
-        className="header-main"
-        style={{
-          background:
+    className="header-main"
+    style={{
+        background:
             ' no-repeat center/cover url("/img/admin/admin_main.jpg")',
-        }}
-      >
-        <div className="header-content">
-          <h2 className="alt-font">Admin Page</h2>
-        </div>
-      </header>
+    }}
+>
+    <div className="header-content">
+        <h2 className="alt-font">Admin Page</h2>
+    </div>
+</header>

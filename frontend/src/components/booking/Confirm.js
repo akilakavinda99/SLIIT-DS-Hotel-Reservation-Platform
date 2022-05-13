@@ -22,7 +22,7 @@ const Confirm = () => {
         {confirmation && confirmation.confirmation ? (
           <>
             <h1 className="alt-font">Thank You!</h1>
-            
+
 
             <div className="confirm">
               <h2 className="alt-font">Your Payment is Successfull</h2>
