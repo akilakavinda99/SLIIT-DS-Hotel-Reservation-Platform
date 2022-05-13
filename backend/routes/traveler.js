@@ -9,19 +9,21 @@ router.route("/login").post((req, res) => {
 
     const { email, password } = req.body;
 
+
     Traveler.findOne({ email: email }, (err, traveler) => {
+
 
         if (traveler) {
 
             if (bcrypt.compareSync(password, traveler.password)) {
                 res.send({ message: "login sucess", traveler: traveler })
 
-            } else {
-                res.send({ message: "wrong credentials" })
-            }
+           }else{
+               res.send({error:"wrong credentials"})
+           }
 
-        } else {
-            res.send("not register")
+        }else{
+            res.send({error:"not register"})
         }
     })
 });

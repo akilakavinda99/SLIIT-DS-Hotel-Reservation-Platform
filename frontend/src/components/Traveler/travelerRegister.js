@@ -76,9 +76,8 @@ export default function RegisterTraveler() {
                         onChange={(e) => {
                             setPassword(e.target.value)
                         }} />
-                        <Link to="/login">
-                            <button className="btn">Register</button>
-                        </Link>
+                        
+                        <button className="btn">Register</button>
                     
                         <Link to="/login">
                             <h5 className="txt-sign-in">Already have an account? Sign in here</h5>
