@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 import "./TravelerReg.scss";
 
@@ -75,8 +76,14 @@ export default function RegisterTraveler() {
                         onChange={(e) => {
                             setPassword(e.target.value)
                         }} />
-                    <button className="btn">Register</button>
-                    <h4>Already a member? Sign in</h4>
+                        <Link to="/login">
+                            <button className="btn">Register</button>
+                        </Link>
+                    
+                        <Link to="/login">
+                            <h5 className="txt-sign-in">Already have an account? Sign in here</h5>
+                        </Link>
+                    
                 </form>
         </div>
         </div>

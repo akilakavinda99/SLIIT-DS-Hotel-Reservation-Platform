@@ -85,7 +85,7 @@ const TravellerLogin = () => {
                             required
                             onChange={onChange} />
                     
-                        <button className="btn">Register</button>
+                        <button className="btn">Log in</button>
                     </form>
             </div>
             </div>
