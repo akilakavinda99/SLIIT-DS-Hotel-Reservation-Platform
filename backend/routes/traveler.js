@@ -9,7 +9,7 @@ router.route("/login").post((req,res)=>{
 
     const {email,password} =req.body;
 
-    Traveler.findOne({email:email},(err,traveler)=>{
+    Traveler.findOne({email:email},(error,traveler)=>{
 
         if(traveler){
 
@@ -17,11 +17,11 @@ router.route("/login").post((req,res)=>{
                res.send({message:"login sucess",traveler:traveler})
 
            }else{
-               res.send({message:"wrong credentials"})
+               res.send({error:"wrong credentials"})
            }
 
         }else{
-            res.send("not register")
+            res.send({error:"not register"})
         }
     })
 });
