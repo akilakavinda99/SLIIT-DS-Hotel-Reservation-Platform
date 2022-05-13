@@ -46,7 +46,7 @@ const About = () => {
             <p>
               <em>
                 "My family and I visited Sri Lanka for the first time and chose the Sooriya Resort. We were completely revived and invigorated for the rest of the year, thanks to our pleasant time at the resort. The resort is just fantastic!
-We loved everything about the hotel, from the breakfast to the superb room service, as well as the cleanliness and extra amenities like dry cleaning and washing. In general, all of the hotel personnel were professional, polite, and gave outstanding service. We will undoubtedly return!"
+                We loved everything about the hotel, from the breakfast to the superb room service, as well as the cleanliness and extra amenities like dry cleaning and washing. In general, all of the hotel personnel were professional, polite, and gave outstanding service. We will undoubtedly return!"
               </em>
             </p>
             <span>Smith Family, Minneapolis, USA</span>

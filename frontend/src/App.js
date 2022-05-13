@@ -19,7 +19,8 @@ import Checkout from "./components/booking/Checkout";
 import Confirm from "./components/booking/Confirm";
 
 import Auth from "./components/auth/Auth";
-import AddRoom from "./components/auth/AddRoom";
+import AddRoom from "./components/auth/room/AddRoom";
+import UpdateRoom from "./components/auth/room/UpdateRoom";
 
 import TravelerRegister from "./components/Traveler/travelerRegister";
 import LoginTraveller from "./components/Traveler/travelerLogin";
@@ -46,7 +47,7 @@ const App = () => {
           exact
           render={(props) => <Room {...props} />}
         />
-       
+
         <Route path="/about" exact component={About} />
         <Route path="/tours" exact component={Tour} />
         <Route path="/booking" exact component={Booking} />
@@ -56,12 +57,17 @@ const App = () => {
         <Route path="/booking/existing" exact component={Existing} />
 
         <Route path="/admin" exact component={Auth} />
-        <Route path="/admin/rooms/add" exact component={AddRoom}/>
+        <Route path="/admin/rooms/add" exact component={AddRoom} />
+        <Route
+          path="/admin/rooms/update/:id"
+          exact
+          render={(props) => <UpdateRoom {...props} />}
+        />
 
-        <Route path ='/register'  exact component={TravelerRegister} />
+        <Route path='/register' exact component={TravelerRegister} />
         <Route path='/login' exact component={LoginTraveller} />
+
         <Route path={"/profile/:id"} exact component={TravelerProfile} />
-        
         <Route path="*" exact component={NoPage} />
       </Switch>
       <Footer />

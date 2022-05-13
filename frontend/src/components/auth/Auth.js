@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import * as api from "../../api/index";
 import Bookings from "./bookings/Bookings";
-import Rooms from "./Rooms"
+import Rooms from "./room/Rooms"
 
 import "./Auth.scss";
 
