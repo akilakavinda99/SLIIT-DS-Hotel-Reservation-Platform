@@ -45,7 +45,7 @@ const Rooms = () => {
                                 <p>{room.description}</p>
                             </div>
                             <div className="img-container">
-                                <img src={`img/rooms/${room.mainImage}`} alt={room.mainImage} />
+                                <img src={`/img/rooms/${room.mainImage}`} alt={room.mainImage} />
                             </div>
                         </article>
                     ))

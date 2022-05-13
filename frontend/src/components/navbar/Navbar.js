@@ -36,14 +36,14 @@ const Navbar = () => {
       </div>
       <div className="navBottom">
         <Link to="/rooms">
-       <span>&nbsp;</span>Rooms <span>&#183;</span>
+          <span>&nbsp;</span>Rooms <span>&#183;</span>
         </Link>
         <Link to="/tours">
           Tours <span>&#183;</span>{" "}
         </Link>
         <Link to="/about">About</Link>
 
-       
+
       </div>
     </div>
   );

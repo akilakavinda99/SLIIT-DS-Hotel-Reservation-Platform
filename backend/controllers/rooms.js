@@ -46,12 +46,9 @@ export const postRoom = async (req, res) => {
 
     // If id exist, update the room details. Otherwise create new room
     if (formData.id) {
-      // console.log("Room Updated")
       const result = await Rooms.findByIdAndUpdate(formData.id, room)
     } else {
-      // console.log("No ID")
-      // console.log(formData)
-      // create a new room in MongoDB
+      // create a new room in DB
       const result = await Rooms.create(room)
     }
 
@@ -63,7 +60,7 @@ export const postRoom = async (req, res) => {
 };
 
 export const deleteRoom = async (req, res) => {
-  const id = req.body;
+  const id = req.body.id;
 
   try {
     const result = await Rooms.findByIdAndDelete(id)
