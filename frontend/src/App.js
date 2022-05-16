@@ -25,6 +25,7 @@ import UpdateRoom from "./components/auth/room/UpdateRoom";
 import TravelerRegister from "./components/Traveler/travelerRegister";
 import LoginTraveller from "./components/Traveler/travelerLogin";
 import TravelerProfile from "./components/Traveler/travelerProfile";
+import MyBookings from "./components/Traveler/myBookings";
 
 import Existing from "./components/booking/Existing";
 import NoPage from "./components/pages/NoPage";
@@ -68,6 +69,7 @@ const App = () => {
         <Route path='/login' exact component={LoginTraveller} />
 
         <Route path={"/profile/:id"} exact component={TravelerProfile} />
+        <Route path={"/mybookings"} exact component={MyBookings} />
         <Route path="*" exact component={NoPage} />
       </Switch>
       <Footer />

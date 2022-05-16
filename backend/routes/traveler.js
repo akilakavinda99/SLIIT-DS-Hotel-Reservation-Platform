@@ -37,12 +37,16 @@ router.route("/register").post(async (req, res) => {
     const firstName = req.body.firstName
     const lastName = req.body.lastName
     const email = req.body.email
+    const telephone = req.body.telephone
+    const address = req.body.address
     const password = securePassword
 
     const newTraveler = new Traveler({
         firstName,
         lastName,
         email,
+        telephone,
+        address,
         password
     })
 
