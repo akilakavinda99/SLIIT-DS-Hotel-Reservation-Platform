@@ -82,7 +82,7 @@ const Checkout = () => {
     dispatch(postBooking({ formData, guestDetails }));
     // create a booking for the guest
     history.push("/booking/confirm");
-    axios.post(`https://app.notify.lk/api/v1/send?user_id=19009&api_key=rOYaX8ies9aoooGtVX4g&sender_id=NotifyDEMO&to=${mobileNumber}&message=Your Booking is Confirmed`)
+    // axios.post(`https://app.notify.lk/api/v1/send?user_id=19009&api_key=rOYaX8ies9aoooGtVX4g&sender_id=NotifyDEMO&to=${mobileNumber}&message=Your Booking is Confirmed`)
 
   };
   const handleChange = (e) => {
