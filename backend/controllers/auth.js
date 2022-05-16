@@ -15,11 +15,11 @@ export const signin = async (req, res) => {
     if (!existingUser)
       return res.status(404).json({ message: "User does not exist." });
 
-    // const isPasswordCorrect = await bcrypt.compare(
-    //   password,
-    //   existingUser.password
-    // );
-    const isPasswordCorrect = true
+    const isPasswordCorrect = await bcrypt.compare(
+      password,
+      existingUser.password
+    );
+    // const isPasswordCorrect = true
 
     if (!isPasswordCorrect)
       return res.status(400).json({ message: "Invalid credentials." });
