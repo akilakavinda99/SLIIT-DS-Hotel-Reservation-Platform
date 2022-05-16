@@ -36,14 +36,16 @@ const Checkout = () => {
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
-    email: "",
-    confirmEmail: "",
+    email: JSON.parse(localStorage.getItem('usertoken')).email,
+    // confirmEmail: "",
     phone: "",
     paymentType: "VISA",
     cardNum: "",
   });
   const { room } = useSelector((state) => state.details);
   const guestDetails = useSelector((state) => state.details);
+
+  var userId = JSON.parse(localStorage.getItem('usertoken')).email
 
   //if (room.length < 1) history.push("/");
   const handleSubmit = (e) => {
@@ -61,10 +63,10 @@ const Checkout = () => {
       return setError(true);
     }
 
-    if (formData.email !== formData.confirmEmail) {
-      setMsg("Emails must match");
-      return setError(true);
-    }
+    // if (formData.email !== formData.confirmEmail) {
+    //   setMsg("Emails must match");
+    //   return setError(true);
+    // }
 
     if (/.+@.+\..+/.test(formData.email) === false) {
       setMsg("Must be a valid email");
@@ -79,7 +81,7 @@ const Checkout = () => {
     }
     var mobile = formData.phone;
     var mobileNumber = mobile.replace(/^.{1}/g, '94');
-    dispatch(postBooking({ formData, guestDetails }));
+    dispatch(postBooking({ formData, guestDetails, userId }));
     // create a booking for the guest
     history.push("/booking/confirm");
     // axios.post(`https://app.notify.lk/api/v1/send?user_id=19009&api_key=rOYaX8ies9aoooGtVX4g&sender_id=NotifyDEMO&to=${mobileNumber}&message=Your Booking is Confirmed`)
@@ -163,21 +165,21 @@ const Checkout = () => {
             variant="outlined"
           />
           <TextField
-            onChange={handleChange}
+            defaultValue={userId}
             required
             className="outlined-basic"
             name="email"
             label="Email"
             variant="outlined"
-          />
-          <TextField
+            InputProps={{readOnly: true,}}/>
+          {/* <TextField
             onChange={handleChange}
             required
             className="outlined-basic"
             name="confirmEmail"
             label="Confirm Email"
             variant="outlined"
-          />
+          /> */}
           <TextField
             onChange={handleChange}
             required

@@ -9,7 +9,10 @@ export default function RegisterTraveler() {
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
     const [email, setEmail] = useState("");
+    const [telephone, setTelephone] = useState("");
+    const [address, setAddress] = useState("");
     const [password, setPassword] = useState("");
+
 
     function sendData(e) {
         e.preventDefault();
@@ -18,6 +21,8 @@ export default function RegisterTraveler() {
             firstName,
             lastName,
             email,
+            telephone,
+            address,
             password
         }
 
@@ -68,6 +73,22 @@ export default function RegisterTraveler() {
                         name="email"
                         onChange={(e) => {
                             setEmail(e.target.value)
+                        }} />
+
+                    <input
+                        type="text"
+                        placeholder="Telephone No"
+                        name="telephone"
+                        onChange={(e) => {
+                            setTelephone(e.target.value)
+                        }} />
+
+                    <input
+                        type="text"
+                        placeholder="Address"
+                        name="address"
+                        onChange={(e) => {
+                            setAddress(e.target.value)
                         }} />
 
                     <input
