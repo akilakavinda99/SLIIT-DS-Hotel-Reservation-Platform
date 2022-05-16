@@ -63,7 +63,7 @@ export const postBooking = async (req, res) => {
       title,
       totalPrice,
       paymentType,
-      cardNum,
+      
     } = data;
     // create a unique booking ID
     let newId = generateID(6);
@@ -94,7 +94,6 @@ export const postBooking = async (req, res) => {
       room: title,
       price: totalPrice,
       cardType: paymentType,
-      cardNum,
       confirmation: newId,
     });
 

@@ -15,3 +15,6 @@ export const fetchExistingBooking = (data) => API.post("/bookings", data);
 export const createBooking = (data) => API.post("/bookings/create", data);
 export const deleteBooking = (data) => API.post("/bookings/delete", data);
 export const signin = (data) => API.post("/auth", data);
+export const createPayment = (data) => axios.post("http://localhost:8000/payment/add",data);
+
+
