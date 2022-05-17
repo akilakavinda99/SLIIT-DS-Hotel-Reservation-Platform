@@ -73,10 +73,10 @@ const Bookings = () => {
                 <h3>Payment Type:</h3>
                 <h3>{info.cardType}</h3>
               </div>
-              <div>
+              {/* <div>
                 <h3>Card Number:</h3>
                 <h3>XXXXXXXXXXXX{info.cardNum.slice(12, 16)}</h3>
-              </div>
+              </div> */}
             </div>
             <div className="actions">
               <button

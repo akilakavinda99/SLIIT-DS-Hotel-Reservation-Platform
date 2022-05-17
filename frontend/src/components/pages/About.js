@@ -1,10 +1,8 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "../../styles/About.scss";
 import '../../styles/map.css'
 import BookWidget from "../booking/BookWidget";
 import { Loader } from "@googlemaps/js-api-loader"
-import dotenv from "dotenv";
-dotenv.config();
 
 const loader = new Loader({
   apiKey: "AIzaSyDzGEUBQ-GAZAhGthGgyonKfzkhNwMOv1U",
@@ -17,30 +15,32 @@ const mapOptions = {
     lat: 5.988972,
     lng: 80.322858
   },
-  zoom: 14
+  zoom: 15
 }
 
-loader
-  .load()
-  .then((google) => {
-    var map = new google.maps.Map(document.getElementById("map"), mapOptions)
-
-    var marker = new google.maps.Marker({
-      position: {
-        lat: 5.988972,
-        lng: 80.322858
-      },
-      title: "Sooriya Resort"
-    });
-
-    // To add the marker to the map, call setMap();
-    marker.setMap(map);
-  })
-  .catch(e => {
-    console.log(e.message)
-  })
-
 const About = () => {
+  useEffect(() => {
+
+    loader
+      .load()
+      .then((google) => {
+        var map = new google.maps.Map(document.getElementById("map"), mapOptions)
+
+        var marker = new google.maps.Marker({
+          position: {
+            lat: 5.988972,
+            lng: 80.322858
+          },
+          title: "Sooriya Resort"
+        });
+
+        // To add the marker to the map, call setMap();
+        marker.setMap(map);
+      })
+      .catch(e => {
+        console.log(e.message)
+      })
+  }, []);
   return (
     <div className="About">
       <header className='header-main'
@@ -59,7 +59,7 @@ const About = () => {
       <section className="desc">
         <h1 className="alt-font">Sooriya Resort Koggala</h1>
         <span></span>
-        <p>Get to know one of Srilanka's best resort</p>
+        <p>Get to know one of Srilanka's best resort</p><br/>
       </section>
       <section className="aboutmap">
         {/* The div element for the map */}

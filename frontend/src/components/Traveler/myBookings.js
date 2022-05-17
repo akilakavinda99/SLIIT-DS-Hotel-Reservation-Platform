@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { mybooking } from "../../actions/booking";
 import { useSelector, useDispatch } from "react-redux";
 import { useHistory } from "react-router";
 import { deleteBooking } from "../../actions/booking";
@@ -9,45 +10,37 @@ import "../../styles/Existing.scss";
 
 const MyBookings = () => {
 
-    const {email} = useParams();
-    const [mybookings, setMyBookings] = useState([]);
-    // const dispatch = useDispatch();
-    // const history = useHistory();
-    // let existing = useSelector((state) => state.existing);
-    const [loading, setLoading] = useState(true);
-    // // update the page if a booking gets delete
-    // const handleDelete = (id) => {
-    //   // handle booking deletion...
-    //   dispatch(deleteBooking({ id }));
-    //   // rerender the page once deleted to update the booking list
-    // };
-
-  useEffect(() =>{
-
-    const getBookings = () =>{
-      axios.post(`http://localhost:5000/bookings/${email}`).then((res) =>{
-        console.log(res.data)
-        setMyBookings(res.data)
-      }).catch((e) =>{
-        alert(e.message);
-      })
-    }
-
-    getBookings();
-
-  },[])
+  const email = JSON.parse(localStorage.getItem('usertoken')).email;
+  const [mybookings, setMyBookings] = useState([]);
+  // const dispatch = useDispatch();
+  // const history = useHistory();
+  // let existing = useSelector((state) => state.existing);
+  const [loading, setLoading] = useState(true);
+  // // update the page if a booking gets delete
+  // const handleDelete = (id) => {
+  //   // handle booking deletion...
+  //   dispatch(deleteBooking({ id }));
+  //   // rerender the page once deleted to update the booking list
+  // };
 
 
-    useEffect(() => {
-      console.log(" i was triggered");
-      setTimeout(() => {
-        setLoading(false);
-      }, 10000);
-    }, []);
+  useEffect(() => {
+    mybooking({confirmation:'', email: JSON.parse(localStorage.getItem('usertoken')).email})
+    .then(res => {
+      setMyBookings(res.data)
+    })
+  }, [])
 
-    
-    return(
-        <div className="Existing">
+
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(false);
+    }, 10000);
+  }, []);
+
+
+  return (
+    <div className="Existing">
       <header
         className="header-main"
         style={{
@@ -117,7 +110,7 @@ const MyBookings = () => {
             <div className="actions">
               <button
                 className="delete-btn"
-                //onClick={() => handleDelete(info.confirmation)}
+              //onClick={() => handleDelete(info.confirmation)}
               >
                 DELETE
               </button>
