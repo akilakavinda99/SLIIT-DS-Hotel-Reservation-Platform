@@ -2,21 +2,42 @@ import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useHistory } from "react-router";
 import { deleteBooking } from "../../actions/booking";
+import { useParams } from 'react-router-dom';
 import axios from "axios";
 
 import "../../styles/Existing.scss";
 
 const MyBookings = () => {
-    const dispatch = useDispatch();
-    const history = useHistory();
-    let existing = useSelector((state) => state.existing);
+
+    const {email} = useParams();
+    const [mybookings, setMyBookings] = useState([]);
+    // const dispatch = useDispatch();
+    // const history = useHistory();
+    // let existing = useSelector((state) => state.existing);
     const [loading, setLoading] = useState(true);
-    // update the page if a booking gets delete
-    const handleDelete = (id) => {
-      // handle booking deletion...
-      dispatch(deleteBooking({ id }));
-      // rerender the page once deleted to update the booking list
-    };
+    // // update the page if a booking gets delete
+    // const handleDelete = (id) => {
+    //   // handle booking deletion...
+    //   dispatch(deleteBooking({ id }));
+    //   // rerender the page once deleted to update the booking list
+    // };
+
+  useEffect(() =>{
+
+    const getBookings = () =>{
+      axios.post(`http://localhost:5000/bookings/${email}`).then((res) =>{
+        console.log(res.data)
+        setMyBookings(res.data)
+      }).catch((e) =>{
+        alert(e.message);
+      })
+    }
+
+    getBookings();
+
+  },[])
+
+
     useEffect(() => {
       console.log(" i was triggered");
       setTimeout(() => {
@@ -37,8 +58,8 @@ const MyBookings = () => {
           <h2 className="alt-font">Your Reservations</h2>
         </div>
       </header>
-      {existing.length > 0 ? (
-        existing.map((info) => (
+      {mybookings.length > 0 ? (
+        mybookings.map((info) => (
           <div className="card" key={info.confirmation}>
             <div className="info">
               <h1>Confirmation Number:</h1>
@@ -96,7 +117,7 @@ const MyBookings = () => {
             <div className="actions">
               <button
                 className="delete-btn"
-                onClick={() => handleDelete(info.confirmation)}
+                //onClick={() => handleDelete(info.confirmation)}
               >
                 DELETE
               </button>
@@ -120,9 +141,9 @@ const MyBookings = () => {
       ) : (
         <section className="desc">
           <h1>No Booking was Found...</h1>
-          <button className="btn" onClick={() => history.push("/booking")}>
+          {/* <button className="btn" onClick={() => history.push("/booking")}>
             Go Back
-          </button>
+          </button> */}
         </section>
       )}
     </div>
