@@ -30,6 +30,8 @@ import MyBookings from "./components/Traveler/myBookings";
 import Existing from "./components/booking/Existing";
 import NoPage from "./components/pages/NoPage";
 
+import taxihome from "./taxi/taxihome";
+
 const App = () => {
   const location = useLocation();
   /* const history = useHistory(); */
@@ -48,6 +50,8 @@ const App = () => {
           exact
           render={(props) => <Room {...props} />}
         />
+
+        <Route path="/taxihome" exact component={taxihome}/>
 
         <Route path="/about" exact component={About} />
         <Route path="/tours" exact component={Tour} />
