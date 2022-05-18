@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 import axios from "axios";
 
 import "./TravelerReg.scss";
@@ -61,7 +62,7 @@ const TravellerLogin = () => {
                 className="header-main"
                 style={{
                 background:
-                    ' no-repeat center/cover url("/img/admin/admin_main.jpg")',
+                    ' no-repeat center/cover url("/img/admin/signin_user.jpg")',
                 }}
             >
                 <div className="header-content">
@@ -86,6 +87,10 @@ const TravellerLogin = () => {
                             onChange={onChange} />
                     
                         <button className="btn">Log in</button>
+
+                        <Link to="/register">
+                            <h6 className="txt-sign-in">Not registered? Create an account</h6>
+                        </Link>
                     </form>
             </div>
             </div>

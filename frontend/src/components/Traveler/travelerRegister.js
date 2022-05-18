@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import { useHistory } from "react-router";
 
 import "./TravelerReg.scss";
 
@@ -12,6 +13,8 @@ export default function RegisterTraveler() {
     const [telephone, setTelephone] = useState("");
     const [address, setAddress] = useState("");
     const [password, setPassword] = useState("");
+
+    const history = useHistory();
 
 
     function sendData(e) {
@@ -27,7 +30,9 @@ export default function RegisterTraveler() {
         }
 
         axios.post("http://localhost:5000/traveler/register", newTraveler).then(() => {
-            alert("successful")
+            //alert("successful");
+            history.push("/login")
+
         }).catch((e) => {
             alert(e)
         })
@@ -39,7 +44,7 @@ export default function RegisterTraveler() {
                 className="header-main"
                 style={{
                     background:
-                        ' no-repeat center/cover url("/img/admin/admin_main.jpg")',
+                        ' no-repeat center/cover url("/img/admin/signup_user.jpeg")',
                 }}
             >
                 <div className="header-content">
@@ -101,7 +106,7 @@ export default function RegisterTraveler() {
                         <button className="btn">Register</button>
                     
                         <Link to="/login">
-                            <h5 className="txt-sign-in">Already have an account? Sign in here</h5>
+                            <h6 className="txt-sign-in">Already have an account? Sign in here</h6>
                         </Link>
                     
                 </form>
