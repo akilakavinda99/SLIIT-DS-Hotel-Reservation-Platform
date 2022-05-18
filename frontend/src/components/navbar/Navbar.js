@@ -30,8 +30,8 @@ const Navbar = () => {
             <h1 className="alt-font">SOORIYA RESORT<span>&nbsp;</span></h1>
           </Link>
         </div>
-        <Link to="/booking">
-          <button className="btn">Booking</button>
+        <Link to="/login">
+          <button className="btn">Sign in</button>
         </Link>
       </div>
       <div className="navBottom">
@@ -41,7 +41,10 @@ const Navbar = () => {
         <Link to="/tours">
           Tours <span>&#183;</span>{" "}
         </Link>
-        <Link to="/about">About</Link>
+        <Link to="/about">
+        About <span>&#183;</span>{" "}
+        </Link>
+        <Link to="/profile">Profile</Link>
 
 
       </div>

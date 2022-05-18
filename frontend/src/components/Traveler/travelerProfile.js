@@ -151,8 +151,6 @@ export default function ViewTraveler(){
 //                                              </div>
 //                                                 </div>
 //                                             </div>
-
-
 // </div>
 
 <div>
@@ -161,7 +159,7 @@ export default function ViewTraveler(){
                 className="header-main"
                 style={{
                 background:
-                    ' no-repeat center/cover url("/img/admin/admin_main.jpg")',
+                    ' no-repeat center/cover url("/img/admin/user profilebg.jpg")',
                 }}
             >
                 <div className="header-content">
@@ -181,7 +179,7 @@ export default function ViewTraveler(){
                       <h4>{traveler.firstName} {traveler.lastName}</h4>
                       <p class="text-muted font-size-sm">{traveler.address}</p>
                       <Link to = "/mybookings">
-                        <button class="btn btn-primary">My Bookings</button>
+                        <button class="btn">My Bookings</button>
                       </Link>
                       
                     </div>
@@ -238,11 +236,6 @@ export default function ViewTraveler(){
                     </div>
                   </div>
                   <hr></hr>
-                  {/* <div class="row">
-                    <div class="col-sm-12">
-                      <a class="btn btn-info " target="__blank" href="https://www.bootdey.com/snippets/view/profile-edit-data-and-skills">Edit</a>
-                    </div>
-                  </div> */}
                 </div>
               </div>
             </div>
