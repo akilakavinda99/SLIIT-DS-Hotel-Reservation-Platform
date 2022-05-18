@@ -71,6 +71,15 @@ export const getSingleBooking = (id) => async (dispatch) => {
   }
 };
 
+export const mybooking = async (email) => {
+  try {
+    const data  = await api.fetchExistingBooking(email);
+    return data
+  } catch (error) {
+    console.log(error);
+  }
+};
+
 export const deleteBooking = (id) => async (dispatch) => {
   try {
     await api.deleteBooking(id);
