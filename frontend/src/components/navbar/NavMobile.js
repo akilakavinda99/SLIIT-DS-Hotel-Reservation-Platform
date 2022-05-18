@@ -31,8 +31,8 @@ const NavMobile = () => {
             <h1 className="alt-font">SOORIYA RESORT</h1>
           </Link>
         </div>
-        <Link to="/booking">
-          <button className="btn">Booking</button>
+        <Link to="/login">
+          <button className="btn">Sign in</button>
         </Link>
       </div>
       <div className={`menu-bottom ${showMenu && "show-menu"}`}>
@@ -60,6 +60,9 @@ const NavMobile = () => {
           <li>
             <Link onClick={() => setShowMenu(false)} to="/about">
               About
+            </Link>
+            <Link onClick={() => setShowMenu(false)} to="/profile">
+              Profile
             </Link>
             <i className="fas fa-chevron-right"></i>
           </li>
