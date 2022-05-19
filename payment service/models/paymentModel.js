@@ -6,7 +6,6 @@ const paymentSchema = new Schema({
     
     userName: {
         type: String,
-        required: true
     },
     email: {
         type: String,
