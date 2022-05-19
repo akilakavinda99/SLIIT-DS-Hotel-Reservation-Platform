@@ -30,6 +30,10 @@ import MyBookings from "./components/Traveler/myBookings";
 import Existing from "./components/booking/Existing";
 import NoPage from "./components/pages/NoPage";
 
+import taxihome from "./taxi/taxihome";
+import taxiReservation from "./taxi/taxi_reservation"
+import taxiconfirm from "./taxi/taxi_confirm"
+
 const App = () => {
   const location = useLocation();
   /* const history = useHistory(); */
@@ -48,6 +52,10 @@ const App = () => {
           exact
           render={(props) => <Room {...props} />}
         />
+
+        <Route path="/taxihome" exact component={taxihome}/>
+        <Route path="/taxireserve" exact component={taxiReservation}/>
+        <Route path="/taxiconfirm" exact component={taxiconfirm}/>
 
         <Route path="/about" exact component={About} />
         <Route path="/tours" exact component={Tour} />

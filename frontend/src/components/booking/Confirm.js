@@ -32,6 +32,7 @@ const Confirm = () => {
                 <button className="btn contrast" onClick={() => window.print()}>
                   <i className="fas fa-print"></i> Print
                 </button>
+                <a class="btn btn-primary btn-sm" href="/taxihome" role="button">Book a Vehicle</a>
               </div>
             </div>
           </>
