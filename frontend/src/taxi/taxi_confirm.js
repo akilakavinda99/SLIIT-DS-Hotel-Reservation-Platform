@@ -1,11 +1,18 @@
 import React, { useState } from "react";
-import "./taxi_reservation.css"
+import "./taxi_confirm.css"
 import { useHistory } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import dotenv from "dotenv";
 dotenv.config();
 
-const t_confirm = ()=>{
+const T_confirm = ()=>{
+    // const history=useHistory();
+    
+
+    // function redirect(){
+    //     history.push("/")
+
+    // }
 
     return (
 
@@ -18,9 +25,11 @@ const t_confirm = ()=>{
             <p>
                 Having trouble? <a href="">Contact us</a>
             </p>
+            <form>
             <p class="lead">
-                <a class="btn btn-primary btn-sm" href="https://bootstrapcreative.com/" role="button">Continue to homepage</a>
+                <a class="btn btn-primary btn-sm" href="/" role="button">Continue to homepage</a>
             </p>
+            </form>
             </div>
 
 
@@ -29,4 +38,4 @@ const t_confirm = ()=>{
 
     );
 };
-export default t_confirm;
+export default T_confirm;

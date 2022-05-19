@@ -51,7 +51,7 @@ const T_Reservation = ()=>{
             phone,
         }
         console.log(reservation);
-        axios.post("http://localhost:5000/taxi/taxi_reserve",reservation).then(()=>{
+        axios.post("http://localhost:8080/taxi/taxi_reserve",reservation).then(()=>{
             //window.location('/taxiconfirm')
              history.push("/taxiconfirm")
             //alert("Success");
@@ -103,7 +103,7 @@ const T_Reservation = ()=>{
                 
                     <option selected>Koggala</option>
                 </select> */}
-                <input type="text" defaultValue={"Koggala"} readOnly></input>
+                <input type="text"  class="form-control col-xs-3" defaultValue={"Koggala"} readOnly></input>
                 </div>
             </div>
 
