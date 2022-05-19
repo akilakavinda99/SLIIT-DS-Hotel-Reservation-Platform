@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { useHistory } from "react-router";
+import * as api from "../../api";
 
 import "./TravelerReg.scss";
 
@@ -29,13 +30,15 @@ export default function RegisterTraveler() {
             password
         }
 
-        axios.post("http://localhost:5000/traveler/register", newTraveler).then(() => {
-            //alert("successful");
-            history.push("/login")
+        // axios.post("http://localhost:5000/traveler/register", newTraveler)
+        api.travelerRegister(newTraveler)
+            .then(() => {
+                //alert("successful");
+                history.push("/login")
 
-        }).catch((e) => {
-            alert(e)
-        })
+            }).catch((e) => {
+                alert(e)
+            })
     }
 
     return (
@@ -102,13 +105,13 @@ export default function RegisterTraveler() {
                         onChange={(e) => {
                             setPassword(e.target.value)
                         }} />
-                        
-                        <button className="btn">Register</button>
-                    
-                        <Link to="/login">
-                            <h6 className="txt-sign-in">Already have an account? Sign in here</h6>
-                        </Link>
-                    
+
+                    <button className="btn">Register</button>
+
+                    <Link to="/login">
+                        <h6 className="txt-sign-in">Already have an account? Sign in here</h6>
+                    </Link>
+
                 </form>
             </div>
         </div>

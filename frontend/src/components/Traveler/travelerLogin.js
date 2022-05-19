@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import * as api from "../../api";
 
 import "./TravelerReg.scss";
 
@@ -22,7 +23,8 @@ const TravellerLogin = () => {
 
         const login = travelerData => {
             return (
-                axios.post('http://localhost:5000/traveler/login', travelerData)
+                // axios.post('http://localhost:5000/traveler/login', travelerData)
+                api.travelerLogin(travelerData)
                     .then(res => {
 
                         const utoken = {

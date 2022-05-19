@@ -6,7 +6,6 @@ import bookingRoutes from "./routes/bookings.js";
 import roomRoutes from "./routes/rooms.js";
 import authRoutes from "./routes/auth.js";
 import travelRoutes from "./routes/traveler.js"
-import taxiRoutes from "./routes/taxi.js"
 
 const app = express();
 dotenv.config();
@@ -19,7 +18,6 @@ app.use("/rooms", roomRoutes);
 app.use("/bookings", bookingRoutes);
 app.use("/auth", authRoutes);
 app.use("/traveler", travelRoutes);
-app.use("/taxi", taxiRoutes);
 app.get("/", (req, res) => {
   res.send("Hello Sooriya Resort API");
 });

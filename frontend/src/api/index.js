@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "http://localhost:5000/",
+  baseURL: "http://localhost:8280/",
 }); // can set a base url here
 
 export const addNewRoom = (data) => API.post("/rooms/create", data);
@@ -16,5 +16,6 @@ export const createBooking = (data) => API.post("/bookings/create", data);
 export const deleteBooking = (data) => API.post("/bookings/delete", data);
 export const signin = (data) => API.post("/auth", data);
 export const createPayment = (data) => API.post("/payment/add",data);
-
-
+export const reserveTaxi = (data) => API.post("/taxi/taxi_reserve",data);
+export const travelerLogin = (data) => API.post("/traveler/login",data);
+export const travelerRegister = (data) => API.post("/traveler/register",data);

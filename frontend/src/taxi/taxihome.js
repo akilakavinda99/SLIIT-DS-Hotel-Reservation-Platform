@@ -1,12 +1,11 @@
 import React from "react";
 import "./taxihome.css"
-import dotenv from "dotenv";
-import {Link,} from 'react-router-dom';
-import {useHistory} from 'react-router-dom';
-dotenv.config();
+import { Link, } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
 
-const taxihome=()=>{
+
+const taxihome = () => {
 
     // const navigate=useNavigate();
 
@@ -23,23 +22,23 @@ const taxihome=()=>{
 
 
 
-    return(
+    return (
 
         <div className="txxx">
-                <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"></link>
-                <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-                <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+            <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"></link>
+            <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+            <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 
-                <div class="container">
-                    <br></br>
-                    <h4>Select A Vehicle</h4>
-                    <br></br>
-                    <div class="row" id="ads">
-                    
+            <div class="container">
+                <br></br>
+                <h4>Select A Vehicle</h4>
+                <br></br>
+                <div class="row" id="ads">
+
                     <div class="col-md-4">
                         <div class="card rounded">
-                        <a href="http://localhost:3000/taxireserve"class="card-clickable"></a>
+                            <a href="http://localhost:3000/taxireserve" class="card-clickable"></a>
                             <div class="card-image">
                                 <span class="card-notify-badge">Tuk</span>
                                 <span class="card-notify-year">Rs.55</span>
@@ -61,7 +60,7 @@ const taxihome=()=>{
 
                     <div class="col-md-4">
                         <div class="card rounded">
-                        <a href="http://localhost:3000/taxireserve" class="card-clickable"></a>
+                            <a href="http://localhost:3000/taxireserve" class="card-clickable"></a>
                             <div class="card-image">
                                 <span class="card-notify-badge">Budget-Taxi</span>
                                 <span class="card-notify-year">65</span>
@@ -83,7 +82,7 @@ const taxihome=()=>{
 
                     <div class="col-md-4">
                         <div class="card rounded">
-                        <a href="http://localhost:3000/taxireserve" class="card-clickable"></a>
+                            <a href="http://localhost:3000/taxireserve" class="card-clickable"></a>
                             <div class="card-image">
                                 <span class="card-notify-badge">Comfort Car</span>
                                 <span class="card-notify-year">85</span>
@@ -127,8 +126,8 @@ const taxihome=()=>{
                         </div>
                     </div>
 
-        </div>
-        </div>
+                </div>
+            </div>
         </div>
 
 

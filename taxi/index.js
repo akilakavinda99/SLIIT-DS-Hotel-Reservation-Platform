@@ -12,7 +12,7 @@ app.use(express.json({ limit: "30mb" }));
 app.use(cors());
 app.use("/taxi", taxiRoutes);
 app.get("/", (req, res) => {
-  res.send("Hello Sooriya Resort API");
+  res.send("Hello Taxi API");
 });
 const PORT = process.env.PORT || 8080;
 
