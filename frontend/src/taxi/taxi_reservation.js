@@ -2,13 +2,11 @@ import React, { useState } from "react";
 import axios from "axios";
 import "./taxi_reservation.css"
 import { useHistory } from "react-router-dom";
+import * as api from "../api";
 import { useSelector, useDispatch } from "react-redux";
-import dotenv from "dotenv";
-import {useForm} from "react-hook-form";
-dotenv.config();
+import { useForm } from "react-hook-form";
 
-
-const T_Reservation = ()=>{
+const T_Reservation = () => {
 
     // onsubmit()
     //const {register,handleSubmit,formState:{errors}}=useForm();
@@ -26,23 +24,23 @@ const T_Reservation = ()=>{
 
     const [vehicleType, setvehicleType] = useState("");
     const [from, setFrom] = useState("");
-    const [to,setTo]=useState("");
-    const[date,setDate]=useState("");
-    const[fname,setFname]=useState("");
-    const[lname,setLname]=useState("");
-    const[email,setEmail]=useState("");
-    const[phone,setPhone]=useState("");
+    const [to, setTo] = useState("");
+    const [date, setDate] = useState("");
+    const [fname, setFname] = useState("");
+    const [lname, setLname] = useState("");
+    const [email, setEmail] = useState("");
+    const [phone, setPhone] = useState("");
     // const {state}=this.props.location
-    const history=useHistory();
+    const history = useHistory();
 
-    function sendData(e){
+    function sendData(e) {
 
-    
+
         e.preventDefault();
         // this.props.history.push('http://localhost:3000/taxiconfirm')
-        const reservation={
+        const reservation = {
             vehicleType,
-            from:"koggala",
+            from: "koggala",
             to,
             date,
             fname,
@@ -51,19 +49,21 @@ const T_Reservation = ()=>{
             phone,
         }
         console.log(reservation);
-        axios.post("http://localhost:8080/taxi/taxi_reserve",reservation).then(()=>{
-            //window.location('/taxiconfirm')
-             history.push("/taxiconfirm")
-            //alert("Success");
-           
-        }
+        // axios.post("http://localhost:8082/taxi/taxi_reserve", reservation)
+        api.reserveTaxi(reservation)
+            .then(() => {
+                //window.location('/taxiconfirm')
+                history.push("/taxiconfirm")
+                //alert("Success");
 
-        ).catch((e)=>{
-            alert(e)
+            }
 
-        }
-            
-        )
+            ).catch((e) => {
+                alert(e)
+
+            }
+
+            )
 
     }
 
@@ -72,84 +72,84 @@ const T_Reservation = ()=>{
     //    this.props.history.push('/dashboard')
     //   }
 
-    return(
+    return (
 
         <div className="taxi-reservation">
-        <div className="taxi-reservation-form">
+            <div className="taxi-reservation-form">
 
 
-            <div class="form-group w-50 p-3 mt-5 ml-10">
-                <h3>Enter Details to book a Vehicle</h3>
-                <br></br>
-                <br></br>
-            <form onSubmit={sendData}>
-            <div class="form-row">
-            <div class="form-group col-md-6">
-                <label for="inputState">Vehicle Type</label>
-                <select id="inputState" class="form-control" defaultValue={"TUK"} onChange={(e)=>{setvehicleType(e.target.value)}}>
-                    <option selected>Select Vehicle Type</option>
-                    <option>Tuk</option>
-                    <option>Budget-Taxi</option>
-                    <option>Comfort Car</option>
-                    <option>Luxary Car</option>
-                </select>
-                </div>
-            </div>
+                <div class="form-group w-50 p-3 mt-5 ml-10">
+                    <h3>Enter Details to book a Vehicle</h3>
+                    <br></br>
+                    <br></br>
+                    <form onSubmit={sendData}>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="inputState">Vehicle Type</label>
+                                <select id="inputState" class="form-control" defaultValue={"TUK"} onChange={(e) => { setvehicleType(e.target.value) }}>
+                                    <option selected>Select Vehicle Type</option>
+                                    <option>Tuk</option>
+                                    <option>Budget-Taxi</option>
+                                    <option>Comfort Car</option>
+                                    <option>Luxary Car</option>
+                                </select>
+                            </div>
+                        </div>
 
-            <div class="form-row">
-            <div class="form-group col-md-6">
-                <label for="inputState">From</label>
-                {/* <select id="inputState" class="form-control" defaultValue={"Koggala"} onChange={(e)=>{setFrom(e.target.value)}}>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="inputState">From</label>
+                                {/* <select id="inputState" class="form-control" defaultValue={"Koggala"} onChange={(e)=>{setFrom(e.target.value)}}>
                 
                     <option selected>Koggala</option>
                 </select> */}
-                <input type="text"  class="form-control col-xs-3" defaultValue={"Koggala"} readOnly></input>
-                </div>
-            </div>
+                                <input type="text" class="form-control col-xs-3" defaultValue={"Koggala"} readOnly></input>
+                            </div>
+                        </div>
 
-            <div class="form-row">
-            <div class="form-group col-md-6">
-                <label for="inputState">To</label>
-                <select id="inputState" class="form-control" onChange={(e)=>{setTo(e.target.value)}}>
-                    <option selected>Colombo</option>
-                    <option selected>Kandy</option>
-                    <option selected>Nuwara Eliya</option>
-                </select>
-                </div>
-            </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="inputState">To</label>
+                                <select id="inputState" class="form-control" onChange={(e) => { setTo(e.target.value) }}>
+                                    <option selected>Colombo</option>
+                                    <option selected>Kandy</option>
+                                    <option selected>Nuwara Eliya</option>
+                                </select>
+                            </div>
+                        </div>
 
-            <div class="form-row">
-                <br></br>
-                <div class="form-group col-md-6">
-                <label for="inputDate">Date</label>
+                        <div class="form-row">
+                            <br></br>
+                            <div class="form-group col-md-6">
+                                <label for="inputDate">Date</label>
 
-                    <input type="date" class="form-control col-xs-3" id="inputdate" onChange={(e)=>{setDate(e.target.value)}}></input>
+                                <input type="date" class="form-control col-xs-3" id="inputdate" onChange={(e) => { setDate(e.target.value) }}></input>
 
-                </div>
-            </div>
+                            </div>
+                        </div>
 
-            <div class="form-row">
-                <div class="form-group col md-6">
-                    <label for="inputfname">First Name </label>
-                    <input type="text" class="form-control col-xs-3" id="inputfname" placeholder="First Name" onChange={(e)=>{setFname(e.target.value)}}></input>
-                </div>
-                <div class="form-group col md-6">
-                    <label for="inputlname">Last Name </label>
-                    <input type="text" class="form-control col-xs-3" id="inputlname" placeholder="Last Name" onChange={(e)=>{setLname(e.target.value)}}></input>
-                </div>
-            </div>
-            <div class="form-row">
-            <div class="form-group col-md-6">
-                <label for="inputEmail4">Email</label>
-                <input type="email" class="form-control col-xs-3" id="inputEmail4" placeholder="Email" onChange={(e)=>{setEmail(e.target.value)}} ></input>
-                </div>
-                </div>
-            <div class="form-row">
-                <div class="form-group col-md-6">
-                <label for="inputPhone">Phone</label>
-                <input type="number" class="form-control" id="inputPhone" placeholder="Phone" onChange={(e)=>{setPhone(e.target.value)}}></input>
-                </div></div>
-            {/* <div class="form-row">
+                        <div class="form-row">
+                            <div class="form-group col md-6">
+                                <label for="inputfname">First Name </label>
+                                <input type="text" class="form-control col-xs-3" id="inputfname" placeholder="First Name" onChange={(e) => { setFname(e.target.value) }}></input>
+                            </div>
+                            <div class="form-group col md-6">
+                                <label for="inputlname">Last Name </label>
+                                <input type="text" class="form-control col-xs-3" id="inputlname" placeholder="Last Name" onChange={(e) => { setLname(e.target.value) }}></input>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="inputEmail4">Email</label>
+                                <input type="email" class="form-control col-xs-3" id="inputEmail4" placeholder="Email" onChange={(e) => { setEmail(e.target.value) }} ></input>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="inputPhone">Phone</label>
+                                <input type="number" class="form-control" id="inputPhone" placeholder="Phone" onChange={(e) => { setPhone(e.target.value) }}></input>
+                            </div></div>
+                        {/* <div class="form-row">
                 <div class="form-group col-md-6">
                 <label for="inputCity">City</label>
                 <input type="text" class="form-control" id="inputCity"></input>
@@ -174,14 +174,14 @@ const T_Reservation = ()=>{
                 </label>
                 </div>
             </div> */}
-            <button type="submit" class="btn btn-danger">Book Vehicle</button>
-            </form>
-            </div>
+                        <button type="submit" class="btn btn-danger">Book Vehicle</button>
+                    </form>
+                </div>
 
-        </div></div>
-        
-    
-        );
+            </div></div>
+
+
+    );
 
 };
 

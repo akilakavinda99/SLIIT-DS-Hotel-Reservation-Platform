@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/traveler" name="traveler" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="GET" uri-template="/get/{id}">
+        <inSequence>
+            <log/>
+            <send>
+                <endpoint key="getTraveler"/>
+            </send>
+        </inSequence>
+        <outSequence>
+            <log/>
+            <send/>
+        </outSequence>
+        <faultSequence/>
+    </resource>
+    <resource methods="POST" uri-template="/login">
+        <inSequence>
+            <send>
+                <endpoint key="travelerLogin"/>
+            </send>
+        </inSequence>
+        <outSequence>
+            <send/>
+        </outSequence>
+        <faultSequence/>
+    </resource>
+    <resource methods="POST" uri-template="/register">
+        <inSequence>
+            <send>
+                <endpoint key="addTraveler"/>
+            </send>
+        </inSequence>
+        <outSequence>
+            <send/>
+        </outSequence>
+        <faultSequence/>
+    </resource>
+</api>
