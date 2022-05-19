@@ -62,6 +62,22 @@ export const postBooking = (details) => async (dispatch) => {
   }
 };
 
+export const postPayment = (details) => async (dispatch) => {
+  try {
+    const newPayment = {
+      
+      ...details.paymentData,
+    
+    };
+    console.log(details);
+
+    const { data } = await api.createPayment(newPayment);
+    dispatch({ type: CREATE, payload: data });
+  } catch (error) {
+    console.log(error);
+  }
+};
+
 export const getSingleBooking = (id) => async (dispatch) => {
   try {
     const { data } = await api.fetchExistingBooking(id);

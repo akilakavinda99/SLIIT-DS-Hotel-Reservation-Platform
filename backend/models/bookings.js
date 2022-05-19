@@ -12,7 +12,7 @@ const bookingSchema = mongoose.Schema({
   room: {type: String, require: true},
   price: { type: Number, required: true },
   cardType: {type: String, require: true},
-  cardNum: {type: String, require: true},
+  // cardNum: {type: String, require: true},
   confirmation: { type: String, required: true },
 });
 
