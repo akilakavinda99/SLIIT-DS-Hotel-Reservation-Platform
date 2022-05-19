@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/taxi" name="taxiService" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="POST" uri-template="/taxi_reserve">
+        <inSequence>
+            <send>
+                <endpoint key="reserveTaxi"/>
+            </send>
+        </inSequence>
+        <outSequence>
+            <send/>
+        </outSequence>
+        <faultSequence/>
+    </resource>
+</api>

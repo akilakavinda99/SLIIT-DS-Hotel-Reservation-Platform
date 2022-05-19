@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/bookings" name="bookings" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="GET">
+        <inSequence>
+            <send>
+                <endpoint key="getAllBookings"/>
+            </send>
+        </inSequence>
+        <outSequence>
+            <send/>
+        </outSequence>
+        <faultSequence/>
+    </resource>
+    <resource methods="POST" uri-template="/get">
+        <inSequence>
+            <send>
+                <endpoint key="getBooking"/>
+            </send>
+        </inSequence>
+        <outSequence>
+            <send/>
+        </outSequence>
+        <faultSequence/>
+    </resource>
+    <resource methods="POST" uri-template="/delete">
+        <inSequence>
+            <send>
+                <endpoint key="deleteBooking"/>
+            </send>
+        </inSequence>
+        <outSequence>
+            <send/>
+        </outSequence>
+        <faultSequence/>
+    </resource>
+    <resource methods="POST" uri-template="/create">
+        <inSequence>
+            <send>
+                <endpoint key="addBooking"/>
+            </send>
+        </inSequence>
+        <outSequence>
+            <send/>
+        </outSequence>
+        <faultSequence/>
+    </resource>
+    <resource methods="POST" uri-template="/available">
+        <inSequence>
+            <send>
+                <endpoint key="getAllAvailable"/>
+            </send>
+        </inSequence>
+        <outSequence>
+            <send/>
+        </outSequence>
+        <faultSequence/>
+    </resource>
+</api>
