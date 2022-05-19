@@ -26,7 +26,7 @@ const Navbar = () => {
           <i className="fab fa-facebook-square"></i>
         </div>
         <div>
-          <Link to="/">
+          <Link to="/" style={{ textDecoration: 'none' }}>
             <h1 className="alt-font">SOORIYA RESORT<span>&nbsp;</span></h1>
           </Link>
         </div>
