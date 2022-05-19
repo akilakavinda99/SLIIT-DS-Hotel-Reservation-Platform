@@ -1,82 +1,135 @@
 import React from "react";
 import "./taxihome.css"
 import dotenv from "dotenv";
+import {Link,} from 'react-router-dom';
+import {useHistory} from 'react-router-dom';
 dotenv.config();
 
 
 const taxihome=()=>{
+
+    // const navigate=useNavigate();
+
+    // const toreservation=()=>{
+    //     navigate('/taxi/taxireserve',{state:{vehicleType:req.body.vehicleType}})
+    // }
+
+    // const toreservation=(e)=>{
+    //     this.props.history.push({
+    //     pathname:'/taxi/taxireserve', state:e  })}
+
+
+
+
+
+
     return(
 
         <div className="txxx">
-            <section class="wrapper">
-  <div class="container">
-  
-  <div class="row">
- <div class="col-md-4"><div class="card text-white card-has-bg click-col" style="background-image:url('https://source.unsplash.com/600x900/?tech,street');">
-         <img class="card-img d-none" src="https://source.unsplash.com/600x900/?tech,street" alt="Goverment Lorem Ipsum Sit Amet Consectetur dipisi?"> </img>
-        <div class="card-img-overlay d-flex flex-column">
-         <div class="card-body">
-            <small class="card-meta mb-2">Thought Leadership</small>
-            <h4 class="card-title mt-0 "><a class="text-white" herf="#">Goverment Lorem Ipsum Sit Amet Consectetur dipisi?</a></h4>
-           <small><i class="far fa-clock"></i> October 15, 2020</small>
-          </div>
-          <div class="card-footer">
-           <div class="media">
-  <img class="mr-3 rounded-circle" src="https://cdn0.iconfinder.com/data/icons/user-pictures/100/male-512.png" alt="Generic placeholder image" style="max-width:50px"> </img>
-  <div class="media-body">
-    <h6 class="my-0 text-white d-block">Oz COruhlu</h6>
-     <small>Director of UI/UX</small>
-  </div>
-</div>
-          </div>
-        </div>
-      </div></div>
-     <div class="col-md-4"><div class="card text-white card-has-bg click-col" style="background-image:url('https://source.unsplash.com/600x900/?tree,nature');">
-         <img class="card-img d-none" src="https://source.unsplash.com/600x900/?tree,nature" alt="Goverment Lorem Ipsum Sit Amet Consectetur dipisi?"> </img>
-        <div class="card-img-overlay d-flex flex-column">
-         <div class="card-body">
-            <small class="card-meta mb-2">Thought Leadership</small>
-            <h4 class="card-title mt-0 "><a class="text-white" herf="#">Goverment Lorem Ipsum Sit Amet Consectetur dipisi?</a></h4>
-           <small><i class="far fa-clock"></i> October 15, 2020</small>
-          </div>
-          <div class="card-footer">
-           <div class="media">
-  <img class="mr-3 rounded-circle" src="https://cdn0.iconfinder.com/data/icons/user-pictures/100/male-512.png" alt="Generic placeholder image" style="max-width:50px"> </img>
-  <div class="media-body">
-    <h6 class="my-0 text-white d-block">Oz COruhlu</h6>
-     <small>Director of UI/UX</small>
-  </div>
-</div>
-          </div>
-        </div>
-      </div></div>
-  <div class="col-md-4"><div class="card text-white card-has-bg click-col" style="background-image:url('https://source.unsplash.com/600x900/?computer,design');">
-         <img class="card-img d-none" src="https://source.unsplash.com/600x900/?computer,design" alt="Goverment Lorem Ipsum Sit Amet Consectetur dipisi?"> </img>
-        <div class="card-img-overlay d-flex flex-column">
-         <div class="card-body">
-            <small class="card-meta mb-2">Thought Leadership</small>
-            <h4 class="card-title mt-0 "><a class="text-white" herf="#">Goverment Lorem Ipsum Sit Amet Consectetur dipisi?</a></h4>
-           <small><i class="far fa-clock"></i> October 15, 2020</small>
-          </div>
-          <div class="card-footer">
-           <div class="media">
-  <img class="mr-3 rounded-circle" src="https://cdn0.iconfinder.com/data/icons/user-pictures/100/male-512.png" alt="Generic placeholder image" style="max-width:50px"> </img>
-  <div class="media-body">
-    <h6 class="my-0 text-white d-block">Oz COruhlu</h6>
-     <small>Director of UI/UX</small>
-  </div>
-</div>
-          </div>
-        </div>
-      </div></div>
-  
-</div>
-  
-</div>
-</section>
+                <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"></link>
+                <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+                <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+                <div class="container">
+                    <br></br>
+                    <h4>Select A Vehicle</h4>
+                    <br></br>
+                    <div class="row" id="ads">
+                    
+                    <div class="col-md-4">
+                        <div class="card rounded">
+                        <a href="http://localhost:3000/taxireserve"class="card-clickable"></a>
+                            <div class="card-image">
+                                <span class="card-notify-badge">Tuk</span>
+                                <span class="card-notify-year">Rs.55</span>
+                                <img class="img-fluid" src="https://imageonthefly.autodatadirect.com/images/?USER=eDealer&PW=edealer872&IMG=USC80HOC011A021001.jpg&width=440&height=262" alt="Alternate Text" ></img>
+                            </div>
+                            <div class="card-image-overlay m-auto">
+                                <span class="card-detail-badge">3 person</span>
+                                <span class="card-detail-badge">Rs.55 per KM</span>
+                                <span class="card-detail-badge">Without A/C</span>
+                            </div>
+                            <div class="card-body text-center">
+                                <div class="ad-title m-auto">
+                                    <h5>Honda Accord LX</h5>
+                                </div>
+                                <a class="ad-btn" href="#">View</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="card rounded">
+                        <a href="http://localhost:3000/taxireserve" class="card-clickable"></a>
+                            <div class="card-image">
+                                <span class="card-notify-badge">Budget-Taxi</span>
+                                <span class="card-notify-year">65</span>
+                                <img class="img-fluid" src="https://imageonthefly.autodatadirect.com/images/?USER=eDealer&PW=edealer872&IMG=CAC80HOC021B121001.jpg&width=440&height=262" alt="Alternate Text" ></img>
+                            </div>
+                            <div class="card-image-overlay m-auto">
+                                <span class="card-detail-badge">4 person</span>
+                                <span class="card-detail-badge">Rs.65 per KM</span>
+                                <span class="card-detail-badge">With A/C</span>
+                            </div>
+                            <div class="card-body text-center">
+                                <div class="ad-title m-auto">
+                                    <h5>Honda CIVIC HATCHBACK LS</h5>
+                                </div>
+                                <a class="ad-btn" href="#">View</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="card rounded">
+                        <a href="http://localhost:3000/taxireserve" class="card-clickable"></a>
+                            <div class="card-image">
+                                <span class="card-notify-badge">Comfort Car</span>
+                                <span class="card-notify-year">85</span>
+                                <img class="img-fluid" src="https://imageonthefly.autodatadirect.com/images/?USER=eDealer&PW=edealer872&IMG=USC80HOC091A021001.jpg&width=440&height=262" alt="Alternate Text" ></img>
+                            </div>
+                            <div class="card-image-overlay m-auto">
+                                <span class="card-detail-badge">5 Person</span>
+                                <span class="card-detail-badge">Rs.85 per KM</span>
+                                <span class="card-detail-badge">With A/C</span>
+                            </div>
+                            <div class="card-body text-center">
+                                <div class="ad-title m-auto">
+                                    <h5>Honda Accord Hybrid LT</h5>
+                                </div>
+                                <a class="ad-btn" href="#">View</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="card rounded">
+                            <a href="http://localhost:3000/taxireserve" class="card-clickable"></a>
+                            <div class="card-image">
+                                <span class="card-notify-badge">Luxary Car</span>
+                                <span class="card-notify-year">115</span>
+                                <img class="img-fluid" src="https://imageonthefly.autodatadirect.com/images/?USER=eDealer&PW=edealer872&IMG=USC80HOC091A021001.jpg&width=440&height=262" alt="Alternate Text" ></img>
+                            </div>
+                            <div class="card-image-overlay m-auto">
+                                <span class="card-detail-badge">Rs.115 per KM</span>
+                                <span class="card-detail-badge">4 Person</span>
+                                <span class="card-detail-badge">With A/C</span>
+                            </div>
+                            {/* <br></br>
+                                <button type="button" class="btn btn-danger">Select</button> */}
+                            <div class="card-body text-center">
+                                <div class="ad-title m-auto">
+                                    <h5>Honda Accord Hybrid LT</h5>
+                                </div>
+                                <a class="ad-btn" href="#">View</a>
+                            </div>
+                        </div>
+                    </div>
 
         </div>
-        
+        </div>
+        </div>
 
 
 

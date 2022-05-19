@@ -1,0 +1,15 @@
+.reserveform{
+    margin: auto;
+}
+
+.taxi-reservation-form{
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+    width: 70%;
+    background-color:white;
+}
+
+.taxi-reservation{
+    background-color: #C6C6C6;
+}

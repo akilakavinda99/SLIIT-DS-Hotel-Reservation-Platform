@@ -1,81 +1,115 @@
-body{
-    background-color:#FCBF49;
-  }
-  .wrapper{margin:10vh}
-  //post card styles
-  
-  .card{
-    border: none;
-    transition: all 500ms cubic-bezier(0.19, 1, 0.22, 1);
-   overflow:hidden;
-   border-radius:20px;
-   min-height:450px;
-     box-shadow: 0 0 12px 0 rgba(0,0,0,0.2);
-  
-   @media (max-width: 768px) {
-    min-height:350px;
-  }
-  
-  @media (max-width: 420px) {
-    min-height:300px;
-  }
-  
-   &.card-has-bg{
-   transition: all 500ms cubic-bezier(0.19, 1, 0.22, 1);
-    background-size:120%;
-    background-repeat:no-repeat;
-    background-position: center center;
-    &:before {
-      content: '';
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      background: inherit;
-      -webkit-filter: grayscale(1);
-    -moz-filter: grayscale(100%);
-    -ms-filter: grayscale(100%);
-    -o-filter: grayscale(100%);
-    filter: grayscale(100%);}
-  
-    &:hover {
-      transform: scale(0.98);
-       box-shadow: 0 0 5px -2px rgba(0,0,0,0.3);
-      background-size:130%;
-       transition: all 500ms cubic-bezier(0.19, 1, 0.22, 1);
-  
-      .card-img-overlay {
-        transition: all 800ms cubic-bezier(0.19, 1, 0.22, 1);
-        background: rgb(35,79,109);
-       background: linear-gradient(0deg, rgba(4,69,114,0.5) 0%, rgba(4,69,114,1) 100%);
-       }
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+body {
+    font-family: 'Montserrat', sans-serif;
+
+}
+
+/* Category Ads */
+
+#ads {
+    margin: 30px 0 30px 0;
+   
+}
+
+#ads .card-notify-badge {
+        position: absolute;
+        left: -10px;
+        top: -20px;
+        background: #f2d900;
+        text-align: center;
+        border-radius: 30px 30px 30px 30px; 
+        color: #000;
+        padding: 5px 10px;
+        font-size: 14px;
+
     }
-  }
-   .card-footer{
-    background: none;
-     border-top: none;
-      .media{
-       img{
-         border:solid 3px rgba(234,95,0,0.3);
-       }
-     }
-   }
-   .card-meta{color:orange}
-   .card-body{ 
-     transition: all 500ms cubic-bezier(0.19, 1, 0.22, 1);
-  }
-   &:hover {
-     .card-body{
-       margin-top:30px;
-       transition: all 800ms cubic-bezier(0.19, 1, 0.22, 1);
-     }
-   cursor: pointer;
-   transition: all 800ms cubic-bezier(0.19, 1, 0.22, 1);
-  }
-   .card-img-overlay {
-    transition: all 800ms cubic-bezier(0.19, 1, 0.22, 1);
-   background: rgb(35,79,109);
-  background: linear-gradient(0deg, rgba(35,79,109,0.3785889355742297) 0%, rgba(69,95,113,1) 100%);
-  }
-  }
+
+#ads .card-notify-year {
+        position: absolute;
+        right: -10px;
+        top: -20px;
+        background: #ff4444;
+        border-radius: 50%;
+        text-align: center;
+        color: #fff;      
+        font-size: 14px;      
+        width: 50px;
+        height: 50px;    
+        padding: 15px 0 0 0;
+}
+
+
+#ads .card-detail-badge {      
+        background: #f2d900;
+        text-align: center;
+        border-radius: 30px 30px 30px 30px;
+        color: #000;
+        padding: 5px 10px;
+        font-size: 14px;        
+    }
+
+   
+
+#ads .card:hover {
+            background: #fff;
+            box-shadow: 12px 15px 20px 0px rgba(46,61,73,0.15);
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+#ads .card-image-overlay {
+        font-size: 20px;
+        
+    }
+
+
+#ads .card-image-overlay span {
+            display: inline-block;              
+        }
+
+
+#ads .ad-btn {
+        text-transform: uppercase;
+        width: 150px;
+        height: 40px;
+        border-radius: 80px;
+        font-size: 16px;
+        line-height: 35px;
+        text-align: center;
+        border: 3px solid #e6de08;
+        display: block;
+        text-decoration: none;
+        margin: 20px auto 1px auto;
+        color: #000;
+        overflow: hidden;        
+        position: relative;
+        background-color: #e6de08;
+    }
+
+#ads .ad-btn:hover {
+            background-color: #e6de08;
+            color: #1e1717;
+            border: 2px solid #e6de08;
+            background: transparent;
+            transition: all 0.3s ease;
+            box-shadow: 12px 15px 20px 0px rgba(46,61,73,0.15);
+        }
+
+#ads .ad-title h5 {
+        text-transform: uppercase;
+        font-size: 18px;
+    }
+
+#ads .card-clickable{
+    position: absolute;
+  width:100%;
+  height:100%;
+  top:0px;
+  left:0px;
+}
+
+#ads .card-rounded{
+    position: relative;
+}
