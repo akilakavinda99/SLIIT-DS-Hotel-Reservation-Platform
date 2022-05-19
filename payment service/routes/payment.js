@@ -11,10 +11,10 @@ router.route("/add").post((req, res) => {
     
 
     const newPayment = new Payment({
-        name,
-        email,
-        cardNumber,
-        type
+        userName: name,
+        email: email,
+        cardnumber: cardNumber,
+        paymentType: type
     })
 
     newPayment.save().then(() => {
