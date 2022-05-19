@@ -255,7 +255,7 @@ const Checkout = () => {
             </Button>
             <Dialog open={open} onClose={handleClose}>
               <DialogTitle>Payment</DialogTitle>
-        <DialogContent>
+        <DialogContent style={{height:'600px'}}>
           
            <TextField
             onChange={handleDetailChange}
