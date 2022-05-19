@@ -3,8 +3,6 @@ import { mybooking } from "../../actions/booking";
 import { useSelector, useDispatch } from "react-redux";
 import { useHistory } from "react-router";
 import { deleteBooking } from "../../actions/booking";
-import { useParams } from 'react-router-dom';
-import axios from "axios";
 
 import "../../styles/Existing.scss";
 
@@ -12,16 +10,16 @@ const MyBookings = () => {
 
   const email = JSON.parse(localStorage.getItem('usertoken')).email;
   const [mybookings, setMyBookings] = useState([]);
-  // const dispatch = useDispatch();
-  // const history = useHistory();
-  // let existing = useSelector((state) => state.existing);
+  const dispatch = useDispatch();
+  const history = useHistory();
+  let existing = useSelector((state) => state.existing);
   const [loading, setLoading] = useState(true);
-  // // update the page if a booking gets delete
-  // const handleDelete = (id) => {
-  //   // handle booking deletion...
-  //   dispatch(deleteBooking({ id }));
-  //   // rerender the page once deleted to update the booking list
-  // };
+// update the page if a booking gets delete
+  const handleDelete = (id) => {
+// handle booking deletion...
+   dispatch(deleteBooking({ id }));
+  // rerender the page once deleted to update the booking list
+  };
 
 
   useEffect(() => {
@@ -110,7 +108,7 @@ const MyBookings = () => {
             <div className="actions">
               <button
                 className="delete-btn"
-              //onClick={() => handleDelete(info.confirmation)}
+              onClick={() => handleDelete(info.confirmation)}
               >
                 DELETE
               </button>
@@ -134,9 +132,9 @@ const MyBookings = () => {
       ) : (
         <section className="desc">
           <h1>No Booking was Found...</h1>
-          {/* <button className="btn" onClick={() => history.push("/booking")}>
+          <button className="btn" onClick={() => history.push("/booking")}>
             Go Back
-          </button> */}
+          </button>
         </section>
       )}
     </div>
