@@ -23,13 +23,17 @@ const TravellerLogin = () => {
 
         const login = travelerData => {
             return (
+                
                 // axios.post('http://localhost:5000/traveler/login', travelerData)
                 api.travelerLogin(travelerData)
                     .then(res => {
+                        //console.log(res.data)
 
                         const utoken = {
                             email: travelerData.email,
-                            role: "traveler"
+                            userId: res.data.traveler._id,
+                            role: "traveler",
+                            
                         }
 
                         localStorage.setItem('usertoken', JSON.stringify(utoken))
@@ -46,6 +50,7 @@ const TravellerLogin = () => {
         login(Traveler)
             .then(res => {
                 if (!res.error) {
+                    console.log(Traveler)
                     history.push("/");
                 } else {
                     window.alert(res.error)
