@@ -1,8 +1,15 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import "../../styles/Navbar.scss";
 
 const Navbar = () => {
+
+  var travelerId = "";
+
+  const history = useHistory();
+ 
+
+  //console.log(travelerId)
   const [header, setHeader] = useState("");
   const listenScrollEvent = (event) => {
     if (window.scrollY < 73) {
@@ -12,10 +19,22 @@ const Navbar = () => {
     }
   };
   useEffect(() => {
+
+    localStorage.usertoken?
+    travelerId = JSON.parse(localStorage.getItem('usertoken')).userId
+    : travelerId=""
+
     window.addEventListener("scroll", listenScrollEvent);
 
     return () => window.removeEventListener("scroll", listenScrollEvent);
+    
   }, []);
+
+  function SignOut (){
+    localStorage.removeItem('usertoken');
+    history.push("/login")
+  }
+
   return (
     <div className={`Navbar ${header}`}>
       <div className="navTop">
@@ -30,9 +49,15 @@ const Navbar = () => {
             <h1 className="alt-font">SOORIYA RESORT<span>&nbsp;</span></h1>
           </Link>
         </div>
+
+        {localStorage.usertoken?
+        <button className="btn" onClick={SignOut}>Sign Out</button>
+        :
         <Link to="/login">
           <button className="btn">Sign in</button>
         </Link>
+        }
+
       </div>
       <div className="navBottom">
         <Link to="/rooms">
@@ -44,7 +69,7 @@ const Navbar = () => {
         <Link to="/about">
         About <span>&#183;</span>{" "}
         </Link>
-        <Link to="/profile">Profile</Link>
+        <Link to = {`/profile/${travelerId}`}>Profile</Link>
 
 
       </div>
