@@ -10,10 +10,11 @@ const Booking = (props) => {
   const history = useHistory();
   const bookingsAPI = useSelector((state) => state.bookingsAPI);
   const details = useSelector((state) => state.details);
+  var userId = JSON.parse(localStorage.getItem('usertoken')).email
 
   const [formData, setFormData] = useState({
     confirmation: "",
-    email: "",
+    email: userId,
   });
   const [error, setError] = useState("");
   const handleChange = (e) => {
@@ -48,20 +49,22 @@ const Booking = (props) => {
       <section className="existing">
         <label>Already have a Booking?</label>
         <form>
-          <input
+          {/* <input
             maxLength="6"
             name="confirmation"
             type="text"
             placeholder="Enter Confirmation Code"
             value={formData.confirmation}
             onChange={handleChange}
-          />
+          /> */}
           <input
             name="email"
             type="text"
-            placeholder="Or Enter Email"
-            value={formData.email}
-            onChange={handleChange}
+            placeholder="Email"
+            value={userId}
+            // value={formData.email}
+            // onChange={handleChange}
+            readOnly
           />
           <button onClick={handleSubmit} className="btn contrast">
             Lookup

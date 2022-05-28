@@ -13,3 +13,17 @@
 .taxi-reservation{
     background-color: #C6C6C6;
 }
+
+.btn-book-vehicle{
+    width: 250px;
+    padding: 10px;
+}
+
+.card-reservation{
+    margin-top: 100px;
+    margin-bottom: 50px;
+}
+
+.label-taxi{
+    margin-top: 10px;
+}

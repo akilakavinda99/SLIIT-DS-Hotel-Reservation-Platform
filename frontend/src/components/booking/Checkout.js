@@ -8,9 +8,15 @@ import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 import MenuItem from "@material-ui/core/MenuItem";
 import "../../styles/Checkout.scss";
-import axios from 'axios';
-import { Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle } from "@material-ui/core";
-
+import axios from "axios";
+import {
+  Alert,
+  Dialog,
+  DialogActions,
+  DialogContent,
+  DialogContentText,
+  DialogTitle,
+} from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -26,7 +32,6 @@ const card = [
     value: "VISA",
     label: "VISA",
   },
-
 ];
 
 const Checkout = () => {
@@ -38,7 +43,7 @@ const Checkout = () => {
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
-    email: JSON.parse(localStorage.getItem('usertoken')).email,
+    email: JSON.parse(localStorage.getItem("usertoken")).email,
     // confirmEmail: "",
     phone: "",
     paymentType: "VISA",
@@ -54,7 +59,7 @@ const Checkout = () => {
   const { room } = useSelector((state) => state.details);
   const guestDetails = useSelector((state) => state.details);
 
-  var userId = JSON.parse(localStorage.getItem('usertoken')).email
+  var userId = JSON.parse(localStorage.getItem("usertoken")).email;
 
   //if (room.length < 1) history.push("/");
   const handleSubmit = (e) => {
@@ -95,7 +100,6 @@ const Checkout = () => {
 
     // create a booking for the guest
     // history.push("/booking/confirm");
-
   };
 
   const handlePayment = (e) => {
@@ -108,23 +112,21 @@ const Checkout = () => {
     //   }
     // }
 
-    //  var cardno = /^(?:4[0-9]{12}(?:[0-9]{3})?)$/;
-    // console.log(paymentData.cardNum.match(cardno));
-    // console.log(paymentData.cardNum);
-    // if (paymentData.cardNumber.match(cardno) === null) {
-    //   setMsg("Must be a valid visa card number");
-    //   return setError(true);
-    // }
+    var cardno = /^(?:4[0-9]{12}(?:[0-9]{3})?)$/;
+    console.log(paymentData.cardNumber);
 
-    dispatch(postBooking({ formData, guestDetails, userId }));
-    dispatch(postPayment({ paymentData }));
-    history.push("/booking/confirm");
-    console.log(formData.phone)
-    var mobile = formData.phone;
-    var mobileNumber = mobile.replace(/^.{1}/g, '94');
-    // axios.post(`https://app.notify.lk/api/v1/send?user_id=19056&api_key=a2wDNLRpBCqYoWU8pdid&sender_id=NotifyDEMO&to=${mobileNumber}&message=Dear Customer, Booking at Sooriya Resort has been authorized. Enjoy your stay!`)
+    console.log(paymentData.cardNumber.match(cardno) === null);
 
-  }
+    if (paymentData.cardNumber.match(cardno) === null) {
+      alert("Invalid Card Number");
+    } else {
+      dispatch(postBooking({ formData, guestDetails, userId }));
+      dispatch(postPayment({ paymentData }));
+      history.push("/booking/confirm");
+    }
+
+    // axios.post(`https://app.notify.lk/api/v1/send?user_id=19056&api_key=a2wDNLRpBCqYoWU8pdid&sender_id=NotifyDEMO&to=${mobileNumber}&message=Dear Customer, Booking at Sooriya Resort for LKR 7590.00 has been authorized. Enjoy your stay!`)
+  };
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
@@ -223,7 +225,8 @@ const Checkout = () => {
             name="email"
             label="Email"
             variant="outlined"
-            InputProps={{ readOnly: true, }} />
+            InputProps={{ readOnly: true }}
+          />
           {/* <TextField
             onChange={handleChange}
             required
@@ -245,31 +248,29 @@ const Checkout = () => {
             }}
           />
 
-
-
           <div className="btn-container">
-
             <Button onClick={handleSubmit} variant="outlined">
               Submit
             </Button>
             <Dialog open={open} onClose={handleClose}>
-              <DialogTitle>Payment</DialogTitle>
-              <DialogContent style={{ height: '600px' }}>
-
+              <DialogTitle style={{ textAlign: "center" }}>
+                Payment Details
+              </DialogTitle>
+              <DialogContent style={{ height: 200, width: 500, margin: 10 }}>
                 <TextField
+                  style={{ margin: 10 }}
                   onChange={handleDetailChange}
                   required
                   className="outlined-basic"
                   name="cardNumber"
                   label="Card Number"
-
-
                   variant="outlined"
-
                 />
+
                 <TextField
-                  onChange={handleDetailChange}
+                  style={{ margin: 10 }}
                   required
+                  onChange={handleDetailChange}
                   className="outlined-basic"
                   name="paymentType"
                   select
@@ -285,13 +286,26 @@ const Checkout = () => {
                     </MenuItem>
                   ))}
                 </TextField>
+
+                <TextField
+                  style={{ margin: 10 }}
+                  onChange={handleDetailChange}
+                  required="true"
+                  className="outlined-basic"
+                  name="cvv"
+                  label="CVV"
+                  variant="outlined"
+                  inputProps={{
+                    inputMode: "numeric",
+                    pattern: "[0-9]*",
+                  }}
+                />
               </DialogContent>
               <DialogActions>
                 <Button onClick={handleClose}>Cancel</Button>
-                <Button onClick={handlePayment}>Subscribe</Button>
+                <Button onClick={handlePayment}>Pay</Button>
               </DialogActions>
             </Dialog>
-
           </div>
         </form>
       </section>
