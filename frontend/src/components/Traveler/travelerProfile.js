@@ -13,7 +13,7 @@ export default function ViewTraveler(){
     useEffect(() =>{
         const getTraveler =() =>{
         axios.get(`http://localhost:5000/traveler/get/${id}`).then((res) =>{
-            console.log(res.data)
+            // console.log(res.data)
             setTraveler(res.data.traveler)
         }).catch((er) =>{
             alert(er.message);

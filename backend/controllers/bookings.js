@@ -6,8 +6,8 @@ import nodemailer from "nodemailer";
 var transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
-    user: 'kakila492@gmail.com',
-    pass: 'zfxvgifygymtztyp'
+    user: 'resortsooriya@gmail.com',
+    pass: 'jeyqmnctscnjdcbe'
   }
 });
 
@@ -96,12 +96,12 @@ export const postBooking = async (req, res) => {
       cardType: paymentType,
       confirmation: newId,
     });
-
+    
     var mailOptions = {
-      from: 'kakila492@gmail.com',
+      from: 'resortsooriya@gmail.com',
       to: email,
       subject: 'Sooriya Resort, Koggala',
-      text: `Your booking from ${title}is confirmed, the confirmation id is ${newId}`
+      text: `Your booking for ${title} is confirmed, the confirmation id is ${newId}`
     };
     transporter.sendMail(mailOptions, function (error, info) {
       if (error) {

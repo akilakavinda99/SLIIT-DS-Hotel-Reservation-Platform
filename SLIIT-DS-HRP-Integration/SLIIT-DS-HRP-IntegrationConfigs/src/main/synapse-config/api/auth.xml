@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/auth" name="auth" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="POST" url-mapping="/">
+        <inSequence>
+            <header name="Access-Control-Allow-Origin" scope="transport" value="json"/>
+            <send>
+                <endpoint key="adminAuth"/>
+            </send>
+        </inSequence>
+        <outSequence>
+            <header name="Access-Control-Allow-Origin" scope="transport" value="json"/>
+            <send/>
+        </outSequence>
+        <faultSequence/>
+    </resource>
+</api>
