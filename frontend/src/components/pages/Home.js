@@ -52,7 +52,11 @@ const Home = () => {
             <article>
               <h2 className="alt-font">Delicious Cuisine</h2>
               <p>
-                Sri Lankan food is focused on finding the proper mix of sweet, sour, spicy, and salty flavors. Pungent fresh herbs like cloves and cardamom balance out overbearing spices, while salty sauces are tempered with sweets and neutralized by acidity like lemon and lime.
+                Sri Lankan food is focused on finding the proper mix of sweet, sour, spicy, and salty flavors. 
+                Pungent fresh herbs like cloves and cardamom balance out overbearing spices, while salty sauces 
+                are tempered with sweets and neutralized by acidity like lemon and lime. High-quality furnishings
+                 with opulent, expensive touches, attention to aesthetic detail, a quiet room with fresh air, 
+                 original art on the walls
               </p>
               <Link to="/dining">
                 <button className="btn contrast">Discover More</button>
@@ -90,7 +94,8 @@ const Home = () => {
                 From lush mountains of the central and northern areas of the
                 country to weirdly shaped limestone formations of southern
                 Sri Lanka, the country owes part of its fame to its wealth of
-                natural wonders. Follow us through these breathtaking natural
+                natural wonders. finding the proper mix of sweet, sour, spicy 
+                Follow us through these breathtaking natural
                 sights that you shouldn’t miss if you come to Sri Lanka – all of
                 them will make you stare wide-eyed in front of the outstanding
                 beauty of Mother Nature.
