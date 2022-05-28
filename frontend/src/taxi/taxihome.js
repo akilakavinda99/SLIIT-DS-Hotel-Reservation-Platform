@@ -37,7 +37,7 @@ const taxihome=()=>{
                     <br></br>
                     <div class="row" id="ads">
                     
-                    <div class="col md-3">
+                    <div class="col">
                         <div class="card rounded">
                         <a href="http://localhost:3000/taxireserve"class="card-clickable"></a>
                             <div class="card-image">
@@ -56,7 +56,7 @@ const taxihome=()=>{
                         </div>
                     </div>
 
-                    <div class="col md-3">
+                    <div class="col">
                         <div class="card rounded">
                         <a href="http://localhost:3000/taxireserve" class="card-clickable"></a>
                             <div class="card-image">
@@ -75,7 +75,7 @@ const taxihome=()=>{
                         </div>
                     </div>
 
-                    <div class="col md-3">
+                    <div class="col">
                         <div class="card rounded">
                         <a href="http://localhost:3000/taxireserve" class="card-clickable"></a>
                             <div class="card-image">
@@ -94,7 +94,7 @@ const taxihome=()=>{
                         </div>
                     </div>
 
-                    <div class="col md-3">
+                    <div class="col">
                         <div class="card rounded">
                             <a href="http://localhost:3000/taxireserve" class="card-clickable"></a>
                             <div class="card-image">
@@ -104,7 +104,7 @@ const taxihome=()=>{
                             </div>
                             <div class="card-image-overlay m-auto">
                                 <span class="card-detail-badge">4 Person</span>
-                                <span class="card-detail-badge">Rs.115 per KM</span>
+                                <span class="card-detail-badge">Rs.95 per KM</span>
                                 <span class="card-detail-badge">With A/C</span>
                             </div>
                             {/* <br></br>
