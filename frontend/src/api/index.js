@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "http://localhost:5000/",
+  baseURL: "http://localhost:8280/",
 }); // can set a base url here
 
 export const addNewRoom = (data) => API.post("/rooms/create", data);
