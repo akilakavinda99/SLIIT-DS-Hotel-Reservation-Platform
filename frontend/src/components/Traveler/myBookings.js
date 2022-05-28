@@ -18,6 +18,7 @@ const MyBookings = () => {
   const handleDelete = (id) => {
 // handle booking deletion...
    dispatch(deleteBooking({ id }));
+   window.location.reload(true);
   // rerender the page once deleted to update the booking list
   };
 

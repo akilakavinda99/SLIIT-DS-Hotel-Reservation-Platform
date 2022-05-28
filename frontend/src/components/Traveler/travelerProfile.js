@@ -23,135 +23,6 @@ export default function ViewTraveler(){
     },[])
 
     return(
-        // <div>
-        //     <div className="profile">
-        //     <header
-        //         className="header-main"
-        //         style={{
-        //         background:
-        //             ' no-repeat center/cover url("/img/admin/admin_main.jpg")',
-        //         }}
-        //     >
-        //         <div className="header-content">
-        //             <h2 className="alt-font">Profile</h2>
-        //         </div>
-        //     </header>
-
-        //     <div className="register">
-        //         <div className="container-profile">
-                
-                    
-        //                 <div className="column-1">
-        //                     <img src="profile.jpg" className="profile" width="120" height="120" />   
-        //                 </div>      
-                
-        //                 <div className="column-2">
-
-        //                     <div className="row-1">
-                                
-        //                     <h4 className="h4-head">First Name </h4>
-
-        //                     <h5>{traveler.firstName}</h5>
-        //                     </div>
-
-        //                     <div className="row-2">
-        //                     <h4 className="h4-head">Last Name </h4>
-        //                     <h5>{traveler.lastName}</h5>
-        //                     </div>
-
-
-        //                     <div className="row-3">
-        //                     <h4 className="h4-head">Email</h4>
-        //                     <h5>{traveler.email}</h5>
-        //                     </div>
-
-
-        //                 </div>
-                    
-        //                 <div className="column-3">
-        //                     <div className="row-c3-r1">
-        //                     <h4 className="h4-head">Telephone</h4>
-        //                     <h5>{traveler.telephone}</h5>
-        //                     </div>
-
-        //                     <div className="row-c3-r2">
-        //                     <h4 className="h4-head">Address</h4>
-        //                     <h5>{traveler.address}</h5>
-        //                     </div>
-
-        //                 </div>
-
-        //         <button>my bookings</button>   
-        //     </div>
-        //    </div>
-        // </div>
-        // </div>
-
-//         <div>
-//             <header
-//                 className="header-main"
-//                 style={{
-//                 background:
-//                     ' no-repeat center/cover url("/img/admin/admin_main.jpg")',
-//                 }}
-//             >
-//                 <div className="header-content">
-//                     <h2 className="alt-font">Profile</h2>
-//                 </div>
-//             </header>
-        
-
-
-//         <div class="page-content page-container" id="page-content">
-//     <div class="padding">
-//         <div class="row container d-flex justify-content-center">
-// <div class="col-xl-6 col-md-12">
-//                                                 <div class="card user-card-full">
-//                                                     <div class="row m-l-0 m-r-0">
-//                                                         <div class="col-sm-4 bg-c-lite-green user-profile">
-//                                                             <div class="card-block text-center text-white">
-//                                                                 <div class="m-b-25">
-//                                                                     <img src="https://img.icons8.com/bubbles/100/000000/user.png" class="img-radius" alt="User-Profile-Image" />
-//                                                                 </div>
-//                                                                 <h6 class="f-w-600">{traveler.firstName} {traveler.lastName}</h6>
-//                                                                 <p>Welcome</p>
-//                                                                 <i class=" mdi mdi-square-edit-outline feather icon-edit m-t-10 f-16"></i>
-//                                                             </div>
-//                                                         </div>
-//                                                         <div class="col-sm-8">
-//                                                             <div class="card-block">
-//                                                                 <h6 class="m-b-20 p-b-5 b-b-default f-w-600">Personal Information</h6>
-//                                                                 <div class="row">
-//                                                                     <div class="col-sm-6">
-//                                                                         <p class="m-b-10 f-w-600">Full Name</p>
-//                                                                         <h6 class="text-muted f-w-400">{traveler.firstName} {traveler.lastName}</h6>
-//                                                                     </div>
-//                                                                     <div class="col-sm-6">
-//                                                                         <p class="m-b-10 f-w-600">Address</p>
-//                                                                         <h6 class="text-muted f-w-400">{traveler.address}</h6>
-//                                                                     </div>
-//                                                                 </div>
-//                                                                 <h6 class="m-b-20 m-t-40 p-b-5 b-b-default f-w-600">Contact Information</h6>
-//                                                                 <div class="row">
-//                                                                     <div class="col-sm-6">
-//                                                                         <p class="m-b-10 f-w-600">Telephone</p>
-//                                                                         <h6 class="text-muted f-w-400">{traveler.telephone}</h6>
-//                                                                     </div>
-//                                                                     <div class="col-sm-6">
-//                                                                         <p class="m-b-10 f-w-600">Email</p>
-//                                                                         <h6 class="text-muted f-w-400">{traveler.email}</h6>
-//                                                                     </div>
-//                                                                 </div>
-                                                            
-//                                                             </div>
-//                                                         </div>
-//                                                     </div>
-//                                                 </div>
-//                                             </div>
-//                                              </div>
-//                                                 </div>
-//                                             </div>
-// </div>
 
 <div>
        
@@ -171,7 +42,7 @@ export default function ViewTraveler(){
     <div class="main-body">
           <div class="row gutters-sm">
             <div class="col-md-4 mb-3">
-              <div class="card">
+              <div class="card card-profile">
                 <div class="card-body">
                   <div class="d-flex flex-column align-items-center text-center">
                     <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" class="rounded-circle" width="150" />
@@ -189,7 +60,7 @@ export default function ViewTraveler(){
              
             </div>
             <div class="col-md-8">
-              <div class="card mb-3">
+              <div class="card mb-3 card-details">
                 <div class="card-body">
                   <div class="row">
                     <div class="col-sm-3">
