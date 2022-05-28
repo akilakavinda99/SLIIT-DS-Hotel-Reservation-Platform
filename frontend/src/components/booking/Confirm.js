@@ -34,7 +34,7 @@ const Confirm = () => {
                 </button>
               </div>
             </div>
-            <a class="btn btn-primary btn-sm" href="/taxihome" role="button">Book a Vehicle</a>
+            <a class="btn btn-danger btn-sm" href="/taxihome" role="button">Book a Vehicle</a>
           </>
         ) : (
           <h1>Something went wrong...</h1>
