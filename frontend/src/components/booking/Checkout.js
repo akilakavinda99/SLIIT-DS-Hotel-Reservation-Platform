@@ -122,7 +122,7 @@ const Checkout = () => {
     console.log(formData.phone)
     var mobile = formData.phone;
     var mobileNumber = mobile.replace(/^.{1}/g, '94');
-    axios.post(`https://app.notify.lk/api/v1/send?user_id=19056&api_key=a2wDNLRpBCqYoWU8pdid&sender_id=NotifyDEMO&to=${mobileNumber}&message=Dear Customer, Booking at Sooriya Resort has been authorized. Enjoy your stay!`)
+    // axios.post(`https://app.notify.lk/api/v1/send?user_id=19056&api_key=a2wDNLRpBCqYoWU8pdid&sender_id=NotifyDEMO&to=${mobileNumber}&message=Dear Customer, Booking at Sooriya Resort has been authorized. Enjoy your stay!`)
 
   }
   const handleChange = (e) => {
