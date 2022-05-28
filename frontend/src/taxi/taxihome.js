@@ -31,9 +31,9 @@ const taxihome=()=>{
                 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 
-                <div class="container">
+                <div class="container container-taxi-home">
                     <br></br>
-                    <h4>Select A Vehicle</h4>
+                    <center><h1><span class="badge bg-light text-dark">Select Your Travel Partner</span></h1></center>
                     <br></br>
                     <div class="row" id="ads">
                     
