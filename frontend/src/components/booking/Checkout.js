@@ -46,8 +46,8 @@ const Checkout = () => {
   });
 
   const [paymentData, setPaymentData] = useState({
-    userName:formData.firstName,
-    email:formData.email,
+    userName: formData.firstName,
+    email: formData.email,
     paymentType: "VISA",
     cardNumber: "",
   });
@@ -95,14 +95,14 @@ const Checkout = () => {
 
     // create a booking for the guest
     // history.push("/booking/confirm");
-    
+
   };
-  
-  const handlePayment = (e) =>{
-     e.preventDefault();
+
+  const handlePayment = (e) => {
+    e.preventDefault();
     // setError(false);
     // for (let val in formData) {
-      //   if (formData[val] === "") {
+    //   if (formData[val] === "") {
     //     setMsg("You must Fill Out Every Field");
     //     return setError(true);
     //   }
@@ -115,11 +115,14 @@ const Checkout = () => {
     //   setMsg("Must be a valid visa card number");
     //   return setError(true);
     // }
-    
+
     dispatch(postBooking({ formData, guestDetails, userId }));
     dispatch(postPayment({ paymentData }));
     history.push("/booking/confirm");
-    // axios.post(`https://app.notify.lk/api/v1/send?user_id=19056&api_key=a2wDNLRpBCqYoWU8pdid&sender_id=NotifyDEMO&to=${mobileNumber}&message=Dear Customer, Booking at Sooriya Resort for LKR 7590.00 has been authorized. Enjoy your stay!`)
+    console.log(formData.phone)
+    var mobile = formData.phone;
+    var mobileNumber = mobile.replace(/^.{1}/g, '94');
+    // axios.post(`https://app.notify.lk/api/v1/send?user_id=19056&api_key=a2wDNLRpBCqYoWU8pdid&sender_id=NotifyDEMO&to=${mobileNumber}&message=Dear Customer, Booking at Sooriya Resort has been authorized. Enjoy your stay!`)
 
   }
   const handleChange = (e) => {
@@ -220,7 +223,7 @@ const Checkout = () => {
             name="email"
             label="Email"
             variant="outlined"
-            InputProps={{readOnly: true,}}/>
+            InputProps={{ readOnly: true, }} />
           {/* <TextField
             onChange={handleChange}
             required
@@ -241,54 +244,54 @@ const Checkout = () => {
               pattern: "[0-9]*",
             }}
           />
-          
-         
+
+
 
           <div className="btn-container">
-            
+
             <Button onClick={handleSubmit} variant="outlined">
               Submit
             </Button>
             <Dialog open={open} onClose={handleClose}>
               <DialogTitle>Payment</DialogTitle>
-        <DialogContent style={{height:'600px'}}>
-          
-           <TextField
-            onChange={handleDetailChange}
-            required
-            className="outlined-basic"
-            name="cardNumber"
-            label="Card Number"
+              <DialogContent style={{ height: '600px' }}>
+
+                <TextField
+                  onChange={handleDetailChange}
+                  required
+                  className="outlined-basic"
+                  name="cardNumber"
+                  label="Card Number"
 
 
-            variant="outlined"
+                  variant="outlined"
 
-          />
-          <TextField
-            onChange={handleDetailChange}
-            required
-            className="outlined-basic"
-            name="paymentType"
-            select
-            label="Select"
-            value={formData.paymentType}
-            /*       onChange={handleChange} */
-            helperText="Card Type"
-            variant="outlined"
-          >
-            {card.map((option) => (
-              <MenuItem key={option.value} value={option.value}>
-                {option.label}
-              </MenuItem>
-            ))}
-          </TextField>
-        </DialogContent>
-        <DialogActions>
-          <Button onClick={handleClose}>Cancel</Button>
-          <Button onClick={handlePayment}>Subscribe</Button>
-        </DialogActions>
-      </Dialog>
-            
+                />
+                <TextField
+                  onChange={handleDetailChange}
+                  required
+                  className="outlined-basic"
+                  name="paymentType"
+                  select
+                  label="Select"
+                  value={formData.paymentType}
+                  /*       onChange={handleChange} */
+                  helperText="Card Type"
+                  variant="outlined"
+                >
+                  {card.map((option) => (
+                    <MenuItem key={option.value} value={option.value}>
+                      {option.label}
+                    </MenuItem>
+                  ))}
+                </TextField>
+              </DialogContent>
+              <DialogActions>
+                <Button onClick={handleClose}>Cancel</Button>
+                <Button onClick={handlePayment}>Subscribe</Button>
+              </DialogActions>
+            </Dialog>
+
           </div>
         </form>
       </section>
