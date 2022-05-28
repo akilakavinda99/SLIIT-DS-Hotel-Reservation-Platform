@@ -153,8 +153,12 @@ const T_Reservation = () => {
                                     <label class="form-control-label label-taxi">From</label>
                                     <input type="text" class="form-control col-xs-3" defaultValue={"Koggala"} readOnly></input>
 
+                                    <label class="form-control-label label-taxi">First Name </label>
+                                    <input type="text" class="form-control col-xs-3" id="inputfname" placeholder="First Name" onChange={(e) => { setFname(e.target.value) }}/>
+
                                     <label class="form-control-label label-taxi">Phone</label>
-                                    <input type="number" class="form-control" id="inputPhone" placeholder="Phone" onChange={(e) => { setPhone(e.target.value) }}></input>
+                                    <input type="text" class="form-control" id="inputPhone" placeholder="Phone" onChange={(e) => { setPhone(e.target.value) }} />
+
 
                                 </div>
 
@@ -167,19 +171,15 @@ const T_Reservation = () => {
                                             <option selected>Nuwara Eliya</option>
                                         </select>
 
-                                    <label class="form-control-label label-taxi">First Name </label>
-                                    <input type="text" class="form-control col-xs-3" id="inputfname" placeholder="First Name" onChange={(e) => { setFname(e.target.value) }}/>
+                                    <label class="form-control-label label-taxi">Date</label>
+                                    <input type="date" class="form-control col-xs-3" id="inputdate" onChange={(e) => { setDate(e.target.value) }} />
 
                                     <label class="form-control-label label-taxi">Last Name </label>
-                                    <input type="text" class="form-control col-xs-3" id="inputlname" placeholder="Last Name" onChange={(e) => { setLname(e.target.value) }}></input>
-                                
-                                </div>
-                            </div>
+                                    <input type="text" class="form-control col-xs-3" id="inputlname" placeholder="Last Name" onChange={(e) => { setLname(e.target.value) }} />
 
-                            <div class="row justify-content-between text-left">
-                                <div class="form-group col-sm-6 flex-column d-flex"> 
                                     <label class="form-control-label label-taxi">Email</label>
-                                    <input type="email" class="form-control col-xs-3" id="inputEmail4" placeholder="Email" onChange={(e) => { setEmail(e.target.value) }} ></input>
+                                    <input type="email" class="form-control col-xs-3" id="inputEmail4" placeholder="Email" onChange={(e) => { setEmail(e.target.value) }} />
+
                                 </div>
                             </div>
         
