@@ -11,7 +11,7 @@ body{
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
 }
 
-.card {
+.card-profile {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -19,8 +19,13 @@ body{
   word-wrap: break-word;
   background-color: rgb(255, 255, 255);
   background-clip: border-box;
-  //border: 0 solid rgba(0,0,0,.125);
+  border: 0 solid rgba(0,0,0,.125);
   border-radius: .25rem;
+}
+
+.card-details{
+  background-color: rgb(255, 255, 255);
+  padding-bottom: 45px;
 }
 
 .card-body {
@@ -40,7 +45,6 @@ body{
 }
 .mb-3, .my-3 {
   margin-bottom: 1rem!important;
-  padding-bottom: 45px;
 }
 
 // .bg-gray-300 {
