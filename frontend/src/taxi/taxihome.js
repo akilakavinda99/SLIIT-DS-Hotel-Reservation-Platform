@@ -43,7 +43,7 @@ const taxihome=()=>{
                             <div class="card-image">
                                 <span class="card-notify-badge">Tuk</span>
                                 <span class="card-notify-year">Rs.55</span>
-                                <img class="img-fluid" src="https://i.postimg.cc/8z72BR8d/istockphoto-915779678-612x612.jpg&width=440&height=262" alt="Alternate Text" ></img>
+                                <img class="img-fluid" src="https://i.postimg.cc/xChhccH2/Untitled-1.png&width=440&height=262" alt="Alternate Text" ></img>
                             </div>
                             <div class="card-image-overlay m-auto">
                                 <span class="card-detail-badge">3 person</span>
@@ -62,7 +62,7 @@ const taxihome=()=>{
                             <div class="card-image">
                                 <span class="card-notify-badge">Budget-Taxi</span>
                                 <span class="card-notify-year">Rs.65</span>
-                                <img class="img-fluid" src="https://i.postimg.cc/L6NdPjDD/images.jpg&width=440&height=262" alt="Alternate Text" ></img>
+                                <img class="img-fluid" src="https://i.postimg.cc/GhJg1MMr/Untitled-2.png&width=440&height=262" alt="Alternate Text" ></img>
                             </div>
                             <div class="card-image-overlay m-auto">
                                 <span class="card-detail-badge">4 person</span>
@@ -81,7 +81,7 @@ const taxihome=()=>{
                             <div class="card-image">
                                 <span class="card-notify-badge">Comfort Car</span>
                                 <span class="card-notify-year">Rs.85</span>
-                                <img class="img-fluid" src="https://i.postimg.cc/65bsvHP5/1448656378-sedan.png&width=440&height=262" alt="Alternate Text" ></img>
+                                <img class="img-fluid" src="https://i.postimg.cc/0jS3mPdJ/Untitled-3.png&width=440&height=262" alt="Alternate Text" ></img>
                             </div>
                             <div class="card-image-overlay m-auto">
                                 <span class="card-detail-badge">5 Person</span>
@@ -100,7 +100,7 @@ const taxihome=()=>{
                             <div class="card-image">
                                 <span class="card-notify-badge">Luxary Car</span>
                                 <span class="card-notify-year">Rs.115</span>
-                                <img class="img-fluid" src="https://i.postimg.cc/907RvWfg/istockphoto-858181030-170667a.jpg&width=440&height=262" alt="Alternate Text" ></img>
+                                <img class="img-fluid" src="https://i.postimg.cc/g2p9VX7c/Untitled-4.png&width=440&height=262" alt="Alternate Text" ></img>
                             </div>
                             <div class="card-image-overlay m-auto">
                                 <span class="card-detail-badge">Rs.115 per KM</span>
