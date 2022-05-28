@@ -131,65 +131,65 @@ const T_Reservation = () => {
         //         </div>
         //     </div></div>
 
-    <div class="container-fluid px-1 py-5 mx-auto">
-        <div class="row d-flex justify-content-center">
-            <div class="col-xl-7 col-lg-8 col-md-9 col-11 text-center">
-            
-                <div class="card card-reservation">
-                    <h4 class="text-center mb-4">Enter Details to book a Vehicle</h4>
+        <div class="container-fluid px-1 py-5 mx-auto">
+            <div class="row d-flex justify-content-center">
+                <div class="col-xl-7 col-lg-8 col-md-9 col-11 text-center">
+
+                    <div class="card card-reservation">
+                        <h4 class="text-center mb-4">Enter Details to book a Vehicle</h4>
 
                         <form class="form-card" onSubmit={sendData}>
                             <div class="row justify-content-between text-left">
-                                <div class="form-group col-sm-6 flex-column d-flex"> 
+                                <div class="form-group col-sm-6 flex-column d-flex">
                                     <label class="form-control-label label-taxi">Vehicle Type</label>
-                                        <select id="inputState" class="form-control" defaultValue={"TUK"} onChange={(e) => { setvehicleType(e.target.value) }}>
-                                            <option selected>Select Vehicle Type</option>
-                                            <option>Tuk</option>
-                                            <option>Budget-Taxi</option>
-                                            <option>Comfort Car</option>
-                                            <option>Luxary Car</option>
-                                        </select>
+                                    <select id="inputState" class="form-control" defaultValue={"TUK"} onChange={(e) => { setvehicleType(e.target.value) }}>
+                                        <option selected>Select Vehicle Type</option>
+                                        <option>Tuk</option>
+                                        <option>Budget-Taxi</option>
+                                        <option>Comfort Car</option>
+                                        <option>Luxary Car</option>
+                                    </select>
 
                                     <label class="form-control-label label-taxi">From</label>
                                     <input type="text" class="form-control col-xs-3" defaultValue={"Koggala"} readOnly></input>
 
                                     <label class="form-control-label label-taxi">First Name </label>
-                                    <input type="text" class="form-control col-xs-3" id="inputfname" placeholder="First Name" onChange={(e) => { setFname(e.target.value) }}/>
+                                    <input type="text" class="form-control col-xs-3" id="inputfname" placeholder="First Name" onChange={(e) => { setFname(e.target.value) }} required />
 
                                     <label class="form-control-label label-taxi">Phone</label>
-                                    <input type="text" class="form-control" id="inputPhone" placeholder="Phone" onChange={(e) => { setPhone(e.target.value) }} />
+                                    <input type="text" class="form-control" id="inputPhone" placeholder="Phone" onChange={(e) => { setPhone(e.target.value) }} required />
 
 
                                 </div>
 
-                                <div class="form-group col-sm-6 flex-column d-flex"> 
+                                <div class="form-group col-sm-6 flex-column d-flex">
 
                                     <label class="form-control-label label-taxi">To</label>
-                                        <select id="inputState" class="form-control" onChange={(e) => { setTo(e.target.value) }}>
-                                            <option selected>Colombo</option>
-                                            <option selected>Kandy</option>
-                                            <option selected>Nuwara Eliya</option>
-                                        </select>
+                                    <select id="inputState" class="form-control" onChange={(e) => { setTo(e.target.value) }}>
+                                        <option selected>Colombo</option>
+                                        <option selected>Kandy</option>
+                                        <option selected>Nuwara Eliya</option>
+                                    </select>
 
                                     <label class="form-control-label label-taxi">Date</label>
-                                    <input type="date" class="form-control col-xs-3" id="inputdate" onChange={(e) => { setDate(e.target.value) }} />
+                                    <input type="date" class="form-control col-xs-3" id="inputdate" onChange={(e) => { setDate(e.target.value) }} required />
 
                                     <label class="form-control-label label-taxi">Last Name </label>
-                                    <input type="text" class="form-control col-xs-3" id="inputlname" placeholder="Last Name" onChange={(e) => { setLname(e.target.value) }} />
+                                    <input type="text" class="form-control col-xs-3" id="inputlname" placeholder="Last Name" onChange={(e) => { setLname(e.target.value) }} required />
 
                                     <label class="form-control-label label-taxi">Email</label>
-                                    <input type="email" class="form-control col-xs-3" id="inputEmail4" placeholder="Email" onChange={(e) => { setEmail(e.target.value) }} />
+                                    <input type="email" class="form-control col-xs-3" id="inputEmail4" placeholder="Email" onChange={(e) => { setEmail(e.target.value) }} required />
 
                                 </div>
                             </div>
-        
-                                    <center><button type="submit" class="btn btn-danger btn-book-vehicle">Book Vehicle</button></center>                
+
+                            <center><button type="submit" class="btn btn-danger btn-book-vehicle">Book Vehicle</button></center>
 
                         </form>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
     );
 
