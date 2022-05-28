@@ -50,9 +50,9 @@ const taxihome=()=>{
                                 <span class="card-detail-badge">Rs.55 per KM</span>
                                 <span class="card-detail-badge">Without A/C</span>
                             </div>
-                            <div class="card-body text-center">
+                            {/* <div class="card-body text-center">
                                 <a class="ad-btn" href="#">View</a>
-                            </div>
+                            </div> */}
                         </div>
                     </div>
 
@@ -69,9 +69,9 @@ const taxihome=()=>{
                                 <span class="card-detail-badge">Rs.65 per KM</span>
                                 <span class="card-detail-badge">With A/C</span>
                             </div>
-                            <div class="card-body text-center">
+                            {/* <div class="card-body text-center">
                                 <a class="ad-btn" href="#">View</a>
-                            </div>
+                            </div> */}
                         </div>
                     </div>
 
@@ -88,9 +88,9 @@ const taxihome=()=>{
                                 <span class="card-detail-badge">Rs.85 per KM</span>
                                 <span class="card-detail-badge">With A/C</span>
                             </div>
-                            <div class="card-body text-center">
+                            {/* <div class="card-body text-center">
                                 <a class="ad-btn" href="#">View</a>
-                            </div>
+                            </div> */}
                         </div>
                     </div>
 
@@ -109,9 +109,9 @@ const taxihome=()=>{
                             </div>
                             {/* <br></br>
                                 <button type="button" class="btn btn-danger">Select</button> */}
-                            <div class="card-body text-center">
+                            {/* <div class="card-body text-center">
                                 <a class="ad-btn" href="#">View</a>
-                            </div>
+                            </div> */}
                         </div>
                     </div>
 
