@@ -37,7 +37,7 @@ const taxihome=()=>{
                     <br></br>
                     <div class="row" id="ads">
                     
-                    <div class="col">
+                    <div class="col md-3">
                         <div class="card rounded">
                         <a href="http://localhost:3000/taxireserve"class="card-clickable"></a>
                             <div class="card-image">
@@ -56,7 +56,7 @@ const taxihome=()=>{
                         </div>
                     </div>
 
-                    <div class="col">
+                    <div class="col md-3">
                         <div class="card rounded">
                         <a href="http://localhost:3000/taxireserve" class="card-clickable"></a>
                             <div class="card-image">
@@ -75,7 +75,7 @@ const taxihome=()=>{
                         </div>
                     </div>
 
-                    <div class="col">
+                    <div class="col md-3">
                         <div class="card rounded">
                         <a href="http://localhost:3000/taxireserve" class="card-clickable"></a>
                             <div class="card-image">
@@ -94,7 +94,7 @@ const taxihome=()=>{
                         </div>
                     </div>
 
-                    <div class="col">
+                    <div class="col md-3">
                         <div class="card rounded">
                             <a href="http://localhost:3000/taxireserve" class="card-clickable"></a>
                             <div class="card-image">
