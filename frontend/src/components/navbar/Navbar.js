@@ -6,6 +6,10 @@ const Navbar = () => {
 
   var travelerId = "";
 
+  localStorage.usertoken?
+  travelerId = JSON.parse(localStorage.getItem('usertoken')).userId
+  : travelerId=""
+  
   const history = useHistory();
  
 
@@ -20,10 +24,7 @@ const Navbar = () => {
   };
   useEffect(() => {
 
-    localStorage.usertoken?
-    travelerId = JSON.parse(localStorage.getItem('usertoken')).userId
-    : travelerId=""
-
+      console.log(travelerId)
     window.addEventListener("scroll", listenScrollEvent);
 
     return () => window.removeEventListener("scroll", listenScrollEvent);
@@ -34,7 +35,7 @@ const Navbar = () => {
     localStorage.removeItem('usertoken');
     history.push("/login")
   }
-
+  console.log(travelerId)
   return (
     <div className={`Navbar ${header}`}>
       <div className="navTop">
