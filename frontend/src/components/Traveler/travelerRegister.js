@@ -65,7 +65,7 @@ export default function RegisterTraveler() {
                         name="firstname"
                         onChange={(e) => {
                             setFirstName(e.target.value)
-                        }} />
+                        }} required/>
 
                     <input
                         type="text"
@@ -73,7 +73,7 @@ export default function RegisterTraveler() {
                         name="lastname"
                         onChange={(e) => {
                             setLastName(e.target.value)
-                        }} />
+                        }} required/>
 
                     <input
                         type="email"
@@ -81,7 +81,7 @@ export default function RegisterTraveler() {
                         name="email"
                         onChange={(e) => {
                             setEmail(e.target.value)
-                        }} />
+                        }} required/>
 
                     <input
                         type="text"
@@ -89,7 +89,7 @@ export default function RegisterTraveler() {
                         name="telephone"
                         onChange={(e) => {
                             setTelephone(e.target.value)
-                        }} />
+                        }} required/>
 
                     <input
                         type="text"
@@ -97,14 +97,14 @@ export default function RegisterTraveler() {
                         name="address"
                         onChange={(e) => {
                             setAddress(e.target.value)
-                        }} />
+                        }} required/>
 
                     <input
                         type="password"
                         placeholder="Password"
                         onChange={(e) => {
                             setPassword(e.target.value)
-                        }} />
+                        }} required/>
 
                     <button className="btn">Register</button>
 
