@@ -40,6 +40,7 @@ const Checkout = () => {
   const classes = useStyles();
   const [error, setError] = useState(false);
   const [msg, setMsg] = useState("");
+  const [mobileNumber, setMobileNumber] = useState("");
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -93,8 +94,8 @@ const Checkout = () => {
     //   setMsg("Must be a valid visa card number");
     //   return setError(true);
     // }
-    // var mobile = formData.phone;
-    // mobileNumber = mobile.replace(/^.{1}/g, '94');
+    var mobile = formData.phone;
+    setMobileNumber(mobile.replace(/^.{1}/g, '94'))
     handleClickOpen();
     // dispatch(postBooking({ formData, guestDetails, userId }));
 
@@ -125,7 +126,10 @@ const Checkout = () => {
       history.push("/booking/confirm");
     }
 
-    // axios.post(`https://app.notify.lk/api/v1/send?user_id=19056&api_key=a2wDNLRpBCqYoWU8pdid&sender_id=NotifyDEMO&to=${mobileNumber}&message=Dear Customer, Booking at Sooriya Resort for LKR 7590.00 has been authorized. Enjoy your stay!`)
+
+    axios.post(`https://app.notify.lk/api/v1/send?user_id=19056&api_key=a2wDNLRpBCqYoWU8pdid&sender_id=NotifyDEMO&to=${mobileNumber}&message=Dear Customer, Booking at Sooriya Resort for LKR 7590.00 has been authorized. Enjoy your stay!`)
+      .then(res => { console.log(res); })
+      .catch(err => { console.log(err); })
   };
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
